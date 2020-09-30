@@ -1,0 +1,74 @@
+html,
+body,
+#root {
+  height: 100%;
+}
+
+.ham {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  z-index: 1000;
+  margin-left: 15px;
+  margin-right: 15px;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 35px;
+  height: 30px;
+  cursor: pointer;
+  position: fixed;
+}
+
+.ham .line {
+  width: 100%;
+  height: 5px;
+  background-color: #eeebe5;
+  border-radius: 4px;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.ham .line-1 {
+  -webkit-transform: rotateZ(-45deg) translate(-8px, 6px);
+          transform: rotateZ(-45deg) translate(-8px, 6px);
+}
+
+.ham .line-2 {
+  opacity: 0;
+}
+
+.ham .line-3 {
+  -webkit-transform: rotateZ(45deg) translate(-8px, -6px);
+          transform: rotateZ(45deg) translate(-8px, -6px);
+}
+
+.hoverTrans {
+  border-radius: 3px;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.hoverTrans:hover {
+  background-color: #718096;
+}
+
+.headerNav {
+  color: white;
+}
+
+.headerNav a {
+  border-radius: 10px;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.headerNav a:hover {
+  background-color: #eeebe55d;
+}
+/*# sourceMappingURL=App.css.map */
