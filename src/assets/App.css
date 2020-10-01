@@ -48,18 +48,38 @@ body,
           transform: rotateZ(45deg) translate(-8px, -6px);
 }
 
-.hoverTrans {
-  border-radius: 3px;
-  -webkit-transition: 0.3s;
-  transition: 0.3s;
+#logo {
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
 }
 
-.hoverTrans:hover {
-  background-color: #718096;
+#logo:hover {
+  -webkit-filter: brightness(100%) contrast(200%);
+          filter: brightness(100%) contrast(200%);
 }
 
 .headerNav {
   color: white;
+  -webkit-animation: fadeIn 1s;
+          animation: fadeIn 1s;
+}
+
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 .headerNav a {
@@ -70,5 +90,21 @@ body,
 
 .headerNav a:hover {
   background-color: #eeebe55d;
+}
+
+.vertical-divider {
+  border: 1px solid rgba(255, 255, 255, 0.493);
+}
+
+.textarea {
+  border: 0;
+}
+
+.post {
+  opacity: 0.9;
+}
+
+.post:focus {
+  opacity: 1;
 }
 /*# sourceMappingURL=App.css.map */

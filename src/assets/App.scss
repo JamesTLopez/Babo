@@ -38,18 +38,29 @@ body,
   }
 }
 
-
-.hoverTrans{
-
-    border-radius: 3px;
-    transition: 0.3s;
-    &:hover{
-        background-color: #718096;
-    }
+//HEADER LOGO ANI
+#logo{
+  transition: all 0.4s;
+  &:hover{
+    filter: brightness(100%) contrast(200%) ;
+  }
 }
+
+
 
 .headerNav{
   color:white;
+  animation: fadeIn 1s;
+
+  @keyframes fadeIn {
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity: 1;
+    }
+    
+  }
   a{
     
     border-radius: 10px;
@@ -58,5 +69,21 @@ body,
       background-color: #eeebe55d;
 
     }
+  }
+}
+
+
+.vertical-divider{
+  border:1px solid rgba(255, 255, 255, 0.493);
+}
+
+.textarea{
+  border: 0;
+}
+
+.post{
+  opacity: 0.9;
+  &:focus{
+    opacity: 1;
   }
 }
