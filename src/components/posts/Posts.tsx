@@ -5,7 +5,7 @@ import Post from './Post'
 function Posts() {
 
     return (
-        <div className="flex flex-wrap flex-col items-center ">
+        <div className="flex flex-wrap flex-col items-center">
             <Post user="James" replyingTo="Terry" content="This my first post"/>
             <Post user="James" replyingTo="Terry" content="This my first post"/>
             <Post user="James" replyingTo="Terry" content="This my first post"/>

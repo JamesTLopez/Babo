@@ -27,8 +27,8 @@ function Header() {
       </div>
       <div className="sm:bg-gray-900 sm:flex-1 sm:flex sm:justify-end sm:items-center text-lg font-bold">
           <nav className={menu ? "block headerNav px-4 py-4" : "hidden headerNav px-4 py-4 sm:flex  "}>
-                <Link className="block py-1 px-2 mx-2 w-auto" to="/home">
-                  Home
+                <Link className="block py-1 px-2 mx-2 w-auto" to="/dashboard/projects">
+                  Dashboard
                 </Link>
                 <Link className="block py-1 px-2 mx-2" to="/login">
                   Login

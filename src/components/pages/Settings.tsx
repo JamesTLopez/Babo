@@ -2,8 +2,8 @@ import React from 'react'
 
 function Settings() {
     return (
-        <div>
-            <h1>Hello from Settings!</h1>
+        <div className="tabs sm:h-full sm:w-2/12 w-full sm:relative">
+      
         </div>
     )
 }
