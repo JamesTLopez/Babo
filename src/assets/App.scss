@@ -74,12 +74,13 @@ body,
 
 }
 
-.post{
+.formcard{
+  min-width: 340px;
+  top:-40px;
+}
 
-  &:focus{
-    opacity: 1;
-  }
-
+.hx-80{
+  height: 12rem;
 }
 
 .h-100{
@@ -100,8 +101,9 @@ body,
   min-width: 300px;
 }
 
-.opa{
-  opacity: 0.9;
+.formcard{
+  height: 30rem;
+  min-height: 20rem;
 }
 
 

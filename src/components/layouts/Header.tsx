@@ -10,7 +10,7 @@ function Header() {
   };
 
   return (
-    <header className="shadow-xl bg-gray-900 sm:flex sm:justify-end">
+    <header className="w-full shadow-xl bg-gray-900 sm:flex sm:justify-end">
       <div className="flex p-4 sm:flex-1">
         <div className="flex-1">
           <Link  to="/home">

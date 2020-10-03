@@ -1,31 +1,40 @@
 import React from "react";
-import { Formik,Form,Field } from "formik";
-
+import { Formik, Form, Field } from "formik";
+import Babo from "../../images/babologo.svg"
 
 interface MyFormValues {
-    firstName: string;
-  }
-  
+  firstName: string;
+}
+
 function Login() {
-    const initialValues: MyFormValues = { firstName: '' };
+  const initialValues: MyFormValues = { firstName: "" };
 
   return (
-    <div className="h-screen flex">
-      <div className="container mx-auto">
-        <Formik
-          initialValues={initialValues}
-          onSubmit={(values, actions) => {
-            console.log({ values, actions });
-            alert(JSON.stringify(values, null, 2));
-            actions.setSubmitting(false);
-          }}
-        >
-          <Form>
-            <label htmlFor="firstName">First Name</label>
-            <Field id="firstName" name="firstName" placeholder="First Name" />
-            <button type="submit">Submit</button>
-          </Form>
-        </Formik>
+    <div className="h-screen w-full flex items-center">
+      <div className="container relative mx-auto h-full flex  justify-center items-center">
+        <div className="formcard relative flex flex-col justify-around bg-gray-900 lg:w-3/4 xl:w-9/12 shadow-xl p-6 rounded-lg">
+          <div className="Logo flex justify-center">
+            <img src={Babo} className="hx-80" alt="Babo"/>
+          </div>
+          <Formik
+            initialValues={initialValues}
+            onSubmit={(values, actions) => {
+              console.log({ values, actions });
+              alert(JSON.stringify(values, null, 2));
+              actions.setSubmitting(false);
+            }}
+          >
+            <div className="formarea w-full flex flex-col items-center">
+              <Form className="flex flex-col w-3/4 ">
+                <label className="text-white text-lg rounded" htmlFor="email">Email</label>
+                <Field className="p-2" id="email" name="email" placeholder="Email address..." />
+                <label className="text-white text-lg rounded" htmlFor="email">Password</label>
+                <Field className="p-2" id="password" name="password" placeholder="Password..." />
+                <button type="submit">Submit</button>
+              </Form>
+            </div>
+          </Formik>
+        </div>
       </div>
     </div>
   );

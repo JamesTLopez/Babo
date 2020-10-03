@@ -10,7 +10,7 @@ import Settings from "./components/pages/Settings";
 function App() {
   return (
     <Router>
-      <div className="h-screen overflow-hidden max-w-full bg-gray-700 ">
+      <div className="relative h-screen overflow-hidden max-w-full bg-gray-700 ">
         <Header />
         <Switch>
           <Route path="/home" component={Home}></Route>
