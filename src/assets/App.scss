@@ -51,8 +51,6 @@ body,
 .headerNav{
   color:white;
   animation: fadeIn 1s;
-
-
   a{
     
     border-radius: 10px;
@@ -69,16 +67,19 @@ body,
   border:1px solid rgba(255, 255, 255, 0.493);
 }
 
-.textarea{
+.textareas{
   border: 0;
+  min-width: 190px;
+  max-height: 100px;
+
 }
 
 .post{
-  opacity: 0.9;
-  scroll-behavior: smooth;
+
   &:focus{
     opacity: 1;
   }
+
 }
 
 .h-100{
@@ -94,6 +95,15 @@ body,
 .transition{
   transition: all 0.6s;
 }
+
+.post{
+  min-width: 300px;
+}
+
+.opa{
+  opacity: 0.9;
+}
+
 
 @keyframes fadeIn {
   from{

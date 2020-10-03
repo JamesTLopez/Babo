@@ -78,13 +78,10 @@ body,
   border: 1px solid rgba(255, 255, 255, 0.493);
 }
 
-.textarea {
+.textareas {
   border: 0;
-}
-
-.post {
-  opacity: 0.9;
-  scroll-behavior: smooth;
+  min-width: 190px;
+  max-height: 100px;
 }
 
 .post:focus {
@@ -103,6 +100,14 @@ body,
 .transition {
   -webkit-transition: all 0.6s;
   transition: all 0.6s;
+}
+
+.post {
+  min-width: 300px;
+}
+
+.opa {
+  opacity: 0.9;
 }
 
 @-webkit-keyframes fadeIn {
