@@ -116,16 +116,6 @@ body,
   min-height: 20rem;
 }
 
-.outer {
-  min-width: 200px;
-  height: 100%;
-}
-
-.inner {
-  background-color: #272f3f;
-  min-width: 200px;
-}
-
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
