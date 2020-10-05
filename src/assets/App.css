@@ -87,6 +87,30 @@ body,
 .formcard {
   min-width: 340px;
   top: -40px;
+  -webkit-animation: fadeInLogin 0.5s;
+          animation: fadeInLogin 0.5s;
+}
+
+@-webkit-keyframes fadeInLogin {
+  from {
+    top: -70px;
+    opacity: 0;
+  }
+  to {
+    top: -40px;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInLogin {
+  from {
+    top: -70px;
+    opacity: 0;
+  }
+  to {
+    top: -40px;
+    opacity: 1;
+  }
 }
 
 .hx-80 {
@@ -114,6 +138,12 @@ body,
 .formcard {
   height: 30rem;
   min-height: 20rem;
+}
+
+.tab {
+  border-right: #00c2f381 2px solid;
+  -webkit-animation: fadeIn 0.5s;
+          animation: fadeIn 0.5s;
 }
 
 @-webkit-keyframes fadeIn {

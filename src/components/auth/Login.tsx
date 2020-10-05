@@ -12,9 +12,9 @@ function Login() {
   return (
     <div className="h-screen w-full flex items-center">
       <div className="container relative mx-auto h-full flex  justify-center items-center">
-        <div className="formcard relative flex flex-col justify-around bg-gray-900 sm:w-1/4  shadow-xl p-6 rounded-lg">
+        <div className="formcard relative flex flex-col justify-around bg-gray-900 sm:w-1/4 lg:w-1/2 shadow-xl p-6 rounded-lg">
           <div className="Logo flex justify-center">
-            <img src={Babo} className="" alt="Babo"/>
+            <img src={Babo} className="git" alt="Babo"/>
           </div>
           <Formik
             initialValues={initialValues}

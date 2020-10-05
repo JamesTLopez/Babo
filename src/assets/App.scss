@@ -69,8 +69,22 @@ body,
 }
 
 .formcard {
+  
   min-width: 340px;
   top: -40px;
+  animation: fadeInLogin 0.5s;
+
+  @keyframes fadeInLogin {
+    from {
+      top:-70px;
+      opacity: 0;
+    }
+    to {
+      top:-40px;
+      opacity: 1;
+    }
+  }
+  
 }
 
 .hx-80 {
@@ -98,7 +112,10 @@ body,
   min-height: 20rem;
 }
 
-
+.tab{
+border-right: #00c2f381 2px solid;
+animation:fadeIn 0.5s;
+}
 
 
 

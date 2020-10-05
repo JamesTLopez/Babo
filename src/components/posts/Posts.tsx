@@ -4,7 +4,7 @@ import Post from "./Post";
 function Posts() {
   return (
     <div className="flex flex-col">
-      <div className="sm:flex hidden h-8">
+      <div className="sm:flex hidden h-12">
         <div className="fixed p-4">
           <h1 className="text-xl font-semibold text-white">Typescript</h1>
         </div>
