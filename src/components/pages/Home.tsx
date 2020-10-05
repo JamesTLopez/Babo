@@ -1,7 +1,6 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
-import Tabs from "../layouts/Tabs";
-import Post from "../posts/Post";
+import Tabs from "../layouts/Tabs"; 
 import Posts from "../posts/Posts";
 
 function Home() {
