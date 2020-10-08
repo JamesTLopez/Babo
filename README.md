@@ -1,7 +1,7 @@
 
 
 ## BABO
-A online forum where you can create topics and discuss ideas
+A online to do list organizer
 
 
 
