@@ -1,7 +1,13 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
 html,
 body,
 #root {
   height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow-y: hidden;
+  font-family: "Libre Baskerville", serif;
 }
 
 .ham {
@@ -141,9 +147,73 @@ body,
 }
 
 .tab {
-  border-right: #00c2f381 2px solid;
+  border-bottom: #00c2f381 2px solid;
   -webkit-animation: fadeIn 0.5s;
           animation: fadeIn 0.5s;
+}
+
+@media (min-width: 660px) {
+  .tab {
+    border-right: #00c2f381 2px solid;
+  }
+}
+
+.feed {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.feed::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
+}
+
+.project-nav {
+  padding: 4px 0px 4px 0px;
+}
+
+.project-nav .sep {
+  display: hidden;
+}
+
+.project-nav .nav {
+  margin: 5px 0px 5px 0px;
+}
+
+.project-nav .nav a {
+  color: white;
+  width: 90%;
+  padding: 5px;
+  margin: 2px 0px 2px 0px;
+  border-radius: 10px;
+  text-align: center;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.project-nav .nav a:hover {
+  background-color: rgba(255, 255, 255, 0.397);
+}
+
+@media (min-width: 660px) {
+  .project-nav .nav a {
+    text-align: left;
+  }
+}
+
+.project-nav h1 {
+  font-size: 1rem;
+  padding: 6px 0px 6px 0px;
+}
+
+@media (min-width: 660px) {
+  .project-nav .sep {
+    border: 1px solid rgba(255, 255, 255, 0.493);
+    margin: 6px 0px 6px 0px;
+  }
+  .project-nav h1 {
+    font-size: 1.5rem;
+  }
 }
 
 @-webkit-keyframes fadeIn {

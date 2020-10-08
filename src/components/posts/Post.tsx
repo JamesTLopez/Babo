@@ -39,7 +39,7 @@ const Post: React.FC<postValues> = ({ title, hours, date, description }) => {
   };
 
   return (
-    <div className={`post fadeIn h-full xl:w-2/6 w-1/2 bg-gray-800 my-5 rounded-lg flex justify-between flex-col sm:flex-row shadow-xl `}>
+    <div className={`post fadeIn h-full sm:w-3/4 xl:w-4/6  bg-gray-800 my-5 rounded-lg flex justify-between flex-col sm:flex-row shadow-xl `}>
       <div className="image flex flex-col items-center m-2 ">
         <img className="sm:h-10 h-16 rounded-full" src={ProfilesPic} alt="temp"></img>
         <div className="sm:visible   sm:my-1 vertical-divider h-full rounded-lg"></div>

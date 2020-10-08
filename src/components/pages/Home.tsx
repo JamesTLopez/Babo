@@ -1,6 +1,7 @@
 import React from "react";
 import { Route, Switch } from "react-router-dom";
 import Tabs from "../layouts/Tabs"; 
+import Createpost from "../posts/Createpost";
 import Posts from "../posts/Posts";
 
 function Home() {
@@ -13,7 +14,7 @@ function Home() {
           
           <Switch>
             <Route path="/dashboard/projects" component={Posts}/>
-
+            <Route path="/dashboard/createproject" component={Createpost}/>
           </Switch>
         </div>
       </div>

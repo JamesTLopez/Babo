@@ -1,7 +1,14 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+
 html,
 body,
 #root {
   height: 100%;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  overflow-y: hidden;
+  font-family: "Libre Baskerville", serif;
 }
 
 //Ham on click animation and
@@ -69,22 +76,20 @@ body,
 }
 
 .formcard {
-  
   min-width: 340px;
   top: -40px;
   animation: fadeInLogin 0.5s;
 
   @keyframes fadeInLogin {
     from {
-      top:-70px;
+      top: -70px;
       opacity: 0;
     }
     to {
-      top:-40px;
+      top: -40px;
       opacity: 1;
     }
   }
-  
 }
 
 .hx-80 {
@@ -112,14 +117,63 @@ body,
   min-height: 20rem;
 }
 
-.tab{
-border-right: #00c2f381 2px solid;
-animation:fadeIn 0.5s;
+.tab {
+  border-bottom: #00c2f381 2px solid;
+  animation: fadeIn 0.5s;
+  @media (min-width: 660px) {
+    border-right: #00c2f381 2px solid;
+  }
 }
 
+.feed {
+  //Remove Sidebar
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  &::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+  }
+}
 
-
-
+.project-nav {
+  padding: 4px 0px 4px 0px;
+  .sep {
+    display: hidden;
+  }
+  .nav{
+    margin: 5px 0px 5px 0px;
+    a {
+      color:white;
+      width: 90%;
+      padding: 5px;
+      margin: 2px 0px 2px 0px;
+      border-radius: 10px;
+      text-align: center;
+      transition: all 0.5s;
+      &:hover{
+        background-color: rgba(255, 255, 255, 0.397);
+      }
+      @media (min-width: 660px) {
+ 
+          text-align: left;
+        
+      }
+    }
+  }
+  h1 {
+    font-size: 1rem;
+    padding: 6px 0px 6px 0px;
+  }
+  @media (min-width: 660px) {
+    .sep {
+      border: 1px solid rgba(255, 255, 255, 0.493);
+      margin: 6px 0px 6px 0px;
+    }
+    h1 {
+      font-size: 1.5rem;
+    }
+  }
+}
 
 @keyframes fadeIn {
   from {
