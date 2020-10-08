@@ -240,6 +240,20 @@ body,
   }
 }
 
+.rot {
+  -webkit-transform: rotate(45deg);
+          transform: rotate(45deg);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.rotback {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
