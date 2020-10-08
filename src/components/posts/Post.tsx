@@ -56,6 +56,7 @@ const Post: React.FC<postValues> = ({ title, hours, date, description }) => {
             <Formik initialValues={postValues}
                    onSubmit={(values, actions) => {
                     setPost({title:values.title,hours:values.hours,date:values.date})
+                    activateText();
                     actions.setSubmitting(false);
                   }}>
               <Form className="flex flex-col">
