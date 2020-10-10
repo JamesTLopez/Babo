@@ -20,7 +20,8 @@ function Tabs() {
             <h1 className="text-white">Projects</h1>
             <div className="sep"></div>
             <div className="nav flex flex-col sm:items-start items-center">
-            <Link  to="/dashboard/createproject"> <img className="h-3" src={Plus} alt="inbox"/> <span className="opacity-50 text-sm">Create Projects</span></Link>  
+              <Link to="/dashboard/projects"><img className="h-5" src={Inbox} alt="inbox"/> Typescript</Link>
+              <Link  to="/dashboard/createproject"> <img className="h-3" src={Plus} alt="inbox"/> <span className="opacity-50 text-sm">Create Projects</span></Link>  
             </div>
 
           </div>

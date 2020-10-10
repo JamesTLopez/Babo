@@ -30,7 +30,7 @@ function Createpost() {
         </div>
       </div>
       {active ?
-        <div className="p-3 flex items-center justify-center w-full">
+        <div className="fadeIn p-3 flex items-center justify-center w-full">
             <Formik initialValues={postValues}
                    onSubmit={(values, actions) => {
           
