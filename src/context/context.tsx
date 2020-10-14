@@ -8,6 +8,19 @@ interface postValues {
     description?:string;
 }
 
+interface project{
+    title:string;
+    posts:string;
+}
+
+interface User {
+    name:string;
+    email:string;
+    allProjects:project;
+}
+
+
+
 
 export let posts:postValues[] =[
     {
@@ -37,6 +50,14 @@ export let posts:postValues[] =[
     },
 
 ]
+
+
+// export let user:User = {
+//     name:"james",
+//     email:"james.tkso.ls@gmail.com",
+// }
+
+
 
 
 export const AppContext = createContext<postValues[]>([]);
