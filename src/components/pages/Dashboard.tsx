@@ -4,6 +4,7 @@ import Tabs from "../layouts/Tabs";
 
 import Posts from "../posts/Posts";
 import CreateProject from "../projects/CreateProject";
+import Project from "../projects/Project";
 
 function Dashboard() {
   return (
@@ -14,7 +15,7 @@ function Dashboard() {
         <div className="feed h-full sm:w-5/6 w-3/4 overflow-y-scroll">
           
           <Switch>
-            <Route path="/dashboard/projects" component={Posts}/>
+            <Route path="/dashboard/projects" component={Project}/>
             <Route path="/dashboard/createproject" component={CreateProject}/>
           </Switch>
         </div>

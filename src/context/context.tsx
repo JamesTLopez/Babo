@@ -1,11 +1,11 @@
 import React,{createContext} from 'react'
 
-interface project{
+export interface project{
     title:string;
     posts:postValues[];
 }
 
-interface postValues {
+export interface postValues {
     title:string;
     hours:number;
     date:string;
