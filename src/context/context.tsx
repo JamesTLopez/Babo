@@ -1,5 +1,9 @@
 import React,{createContext} from 'react'
 
+interface project{
+    title:string;
+    posts:postValues[];
+}
 
 interface postValues {
     title:string;
@@ -8,21 +12,18 @@ interface postValues {
     description?:string;
 }
 
-interface project{
-    title:string;
-    posts:string;
-}
+
 
 interface User {
     name:string;
     email:string;
-    allProjects:project;
+    allProjects:project[];
 }
 
 
 
 
-export let posts:postValues[] =[
+export let myPosts:postValues[] =[
     {
         title:"James",
         hours:2,
@@ -52,18 +53,32 @@ export let posts:postValues[] =[
 ]
 
 
-// export let user:User = {
-//     name:"james",
-//     email:"james.tkso.ls@gmail.com",
-// }
+export let jamesProject:project[] = [
+    {
+        title:"Typescript",
+        posts:myPosts
+    }
+]
 
 
 
+export let jamesUser:User ={
+    name:"james",
+    email:'test',
+    allProjects:jamesProject
+}
 
-export const AppContext = createContext<postValues[]>([]);
+
+
+// 
+
+
+export const AppContext = createContext<User>({   name:"james",
+email:'test',
+allProjects:jamesProject});
 
 export const Provider = (props: { children: React.ReactNode; }) =>{
-    return <AppContext.Provider value={posts}>
+    return <AppContext.Provider value={jamesUser}>
         {props.children}
     </AppContext.Provider>
 }

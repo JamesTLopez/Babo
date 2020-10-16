@@ -6,17 +6,19 @@ import { Consumer } from "../../context/context";
 function Posts() {
   return (
     <Consumer>
-      {(posts) => {
+      {(User) => {
+        let allProjects = User.allProjects;
+        let posts = allProjects[0];
         return (
-          <div className="flex flex-col">
+          <div className="p-10 relative flex flex-col">
             <div className="sm:flex items-center hidden h-12">
               <div className="fixed p-4">
-                <h1 className="text-xl font-semibold text-white">Typescript</h1>
+                <h1 className="text-xl font-semibold text-white">{posts.title}</h1>
               </div>
             </div>
-            <div className="flex flex-wrap  ">
+            <div className="flex flex-wrap">
               <div className="md:w-2/3  w-full flex flex-col items-center ">
-                {posts.map((post,index) =>
+                {posts.posts.map((post,index) =>
                   <Post key={index} title={post.title} hours={post.hours} date={post.date} />
                 )}
               </div>
@@ -30,5 +32,6 @@ function Posts() {
     </Consumer>
   );
 }
+
 
 export default Posts;
