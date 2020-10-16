@@ -51,12 +51,45 @@ export let myPosts:postValues[] =[
     },
 
 ]
+export let nonTypescript:postValues[] =[
+    {
+        title:"javascript",
+        hours:2,
+        date:"May 31 2021"
+    },
+    {
+        title:"C++",
+        hours:10,
+        date:"Jun 23 2021"
+    },
+    {
+        title:"C#",
+        hours:1.3,
+        date:"July 11 2021"
+    },
+    {
+        title:"Unity",
+        hours:4,
+        date:"November 23 2021"
+    },
+    {
+        title:"Ableton",
+        hours:2.6,
+        date:"December 14 2021"
+    },
+
+]
+
 
 
 export let jamesProject:project[] = [
     {
         title:"Typescript",
         posts:myPosts
+    },
+    {
+        title:"NotTypescript",
+        posts:nonTypescript
     }
 ]
 

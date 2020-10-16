@@ -3,7 +3,7 @@ import Createpost from "./Createpost";
 import Post from "./Post";
 import { project } from "../../context/context";
 
-const Posts: React.FC<project> = ({ title, posts }) => {
+const Posts: React.FC<project> = ({  posts }) => {
   return (
     <div className=" flex items-center  flex-col w-full">
       {posts.map((post, index) => (
