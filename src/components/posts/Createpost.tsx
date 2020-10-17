@@ -13,7 +13,7 @@ interface postValues {
 function Createpost() {
 
     const [active, isActive] = useState<boolean>(false);
-    let [postValues, setPost] = useState<postValues>({title:'',hours:0,date:'',description:''});
+    let [postValues, ] = useState<postValues>({title:'',hours:0,date:'',description:''});
     const activate = () =>{
         isActive(!active);
     }

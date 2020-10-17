@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Babo from "../../images/BaboHeader.svg";
-import { Consumer } from "../../context/context";
+
 
 function Header() {
   const [menu, isMenuSelected] = useState<boolean>(false);
 
-  const selected = (e: React.MouseEvent<HTMLDivElement>) => {
+  const selected = () => {
     isMenuSelected(!menu);
   };
 

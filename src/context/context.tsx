@@ -80,6 +80,36 @@ export let nonTypescript:postValues[] =[
 
 ]
 
+export let music:postValues[] =[
+    {
+        title:"Chords",
+        hours:1,
+        date:"May 31 2021"
+    },
+    {
+        title:"Guitar Scales",
+        hours:10,
+        date:"Jun 23 2021"
+    },
+    {
+        title:"Piano",
+        hours:1.3,
+        date:"July 11 2021"
+    },
+    {
+        title:"Ableton Production",
+        hours:4,
+        date:"November 23 2021"
+    },
+    {
+        title:"Song writing",
+        hours:2.6,
+        date:"December 14 2021"
+    },
+
+]
+
+
 
 
 export let jamesProject:project[] = [
@@ -90,6 +120,10 @@ export let jamesProject:project[] = [
     {
         title:"NotTypescript",
         posts:nonTypescript
+    },
+    {
+        title:"Music",
+        posts:music
     }
 ]
 

@@ -1,5 +1,4 @@
 import React from "react";
-import Createpost from "./Createpost";
 import Post from "./Post";
 import { project } from "../../context/context";
 

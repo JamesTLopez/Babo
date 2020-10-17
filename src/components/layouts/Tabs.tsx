@@ -9,7 +9,6 @@ function Tabs() {
   return (
     <Consumer>
       {(User) => {
-        
         return (
           <div className="tab sm: sm:w-1/6 sm:fixed relative w-full sm:h-full bg-gray-800">
             <div className="flex flex-col sm:items-start items-center p-4">
@@ -26,12 +25,13 @@ function Tabs() {
                   <h1 className="text-white">Projects</h1>
                   <div className="sep"></div>
                   <div className="nav flex flex-col sm:items-start items-center">
-                    
-                    {User.allProjects.map((proje,index) => 
-                    <Link key={index} to="/dashboard/projects">
-                      <img className="h-5" src={Inbox} alt="inbox" /> {proje.title}
-                    </Link>)}
-                   
+                    {User.allProjects.map((proje, index) => (
+                      <Link key={index} to={`/dashboard/projects/${proje.title}`}>
+                        <img className="h-5" src={Inbox} alt="inbox" />{" "}
+                        {proje.title}
+                      </Link>
+                    ))}
+
                     <Link to="/dashboard/createproject">
                       {" "}
                       <img className="h-3" src={Plus} alt="inbox" />{" "}
