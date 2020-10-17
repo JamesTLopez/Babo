@@ -1,4 +1,4 @@
-import React,{useState} from  "react";
+import React from  "react";
 import { Consumer } from "../../context/context";
 import Createpost from "../posts/Createpost";
 import Posts from "../posts/Posts";
@@ -7,8 +7,8 @@ import {useParams} from "react-router-dom"
 
 const Project:React.FC = () => {
   let {id}:any = useParams();
-  return (
-    
+
+  return (  
     <Consumer>
       
       {(User) => {
@@ -16,7 +16,6 @@ const Project:React.FC = () => {
         let allProjects = User.allProjects;
         let posts =  allProjects.filter(x => x.title === id)
         let projectPosts = posts[0];
-        console.log(projectPosts)
         return (
           <div className="p-10 relative flex flex-col">
             <div className="sm:flex items-center hidden h-12">
