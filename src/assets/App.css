@@ -160,6 +160,7 @@ body,
   border-bottom: #00c2f381 2px solid;
   -webkit-animation: fadeIn 0.5s;
           animation: fadeIn 0.5s;
+  min-width: 223px;
 }
 
 @media (min-width: 660px) {

@@ -137,8 +137,17 @@ export let jamesUser:User ={
 
 
 
-// 
+const reducer = (state:any, action:any) => {
+    switch(action.type){
+        case 'DELETE_POST':
+            return{
+                ...state,
 
+            }
+        default:
+            return state;
+    }
+}
 
 export const AppContext = createContext<User>({   name:"james",
 email:'test',

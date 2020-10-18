@@ -13,6 +13,7 @@ function Dashboard() {
         <div className="w-1/6"></div>
         <div className="feed h-full sm:w-5/6 w-3/4 overflow-y-scroll">
           <Switch>
+            
             <Route path="/dashboard/projects/:id" component={Project}/>
             <Route path="/dashboard/createproject" component={CreateProject}/>
           </Switch>

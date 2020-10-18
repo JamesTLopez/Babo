@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { Link } from "react-router-dom";
 import Inbox from "../../images/inbox.svg";
 import Plus from "../../images/plus.svg";
@@ -6,12 +6,24 @@ import Time from "../../images/timeline.svg";
 import { Consumer } from "../../context/context";
 
 function Tabs() {
+
+  const [menu, isMenuSelected] = useState<boolean>(false);
+
+  const onyx = () => {
+    isMenuSelected(!menu);
+  };
+
   return (
     <Consumer>
       {(User) => {
         return (
-          <div className="tab sm: sm:w-1/6 sm:fixed relative w-full sm:h-full bg-gray-800">
-            <div className="flex flex-col sm:items-start items-center p-4">
+          <div className="tab sm:w-1/6 sm:fixed relative w-full sm:h-full bg-gray-800">
+            <div className="button-container flex items-center justify-center w-full ">
+              <button className="sm:hidden m-3 visible text-white bg-green-400 p-2" onClick={onyx}>
+                Open Menu
+              </button>
+            </div>
+            <div className={!menu ?"sm:flex flex-col sm:visible hidden sm:items-start items-center p-4" : "sm:flex flex-col sm:items-start items-center p-4"}>
               <div className="flex flex-col w-full">
                 <div className="project-nav flex flex-col">
                   <div className="nav flex flex-col sm:items-start items-center">
@@ -26,7 +38,10 @@ function Tabs() {
                   <div className="sep"></div>
                   <div className="nav flex flex-col sm:items-start items-center">
                     {User.allProjects.map((proje, index) => (
-                      <Link key={index} to={`/dashboard/projects/${proje.title}`}>
+                      <Link
+                        key={index}
+                        to={`/dashboard/projects/${proje.title}`}
+                      >
                         <img className="h-5" src={Inbox} alt="inbox" />{" "}
                         {proje.title}
                       </Link>
