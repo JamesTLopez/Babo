@@ -1,4 +1,4 @@
-import React,{createContext} from 'react'
+import React,{createContext, useReducer} from 'react'
 
 export interface project{
     title:string;
@@ -51,6 +51,8 @@ export let myPosts:postValues[] =[
     },
 
 ]
+
+
 export let nonTypescript:postValues[] =[
     {
         title:"javascript",
@@ -128,7 +130,6 @@ export let jamesProject:project[] = [
 ]
 
 
-
 export let jamesUser:User ={
     name:"james",
     email:'test',
@@ -137,24 +138,26 @@ export let jamesUser:User ={
 
 
 
-const reducer = (state:any, action:any) => {
+export const reducer = (state:any, action:any) => {
     switch(action.type){
         case 'DELETE_POST':
+            console.log('Reducer works')
             return{
                 ...state,
-
             }
         default:
+            console.log("reder")
             return state;
     }
 }
 
-export const AppContext = createContext<User>({   name:"james",
-email:'test',
-allProjects:jamesProject});
+export const AppContext = createContext<{state:User;dispatch:any}>({state:jamesUser,
+                                                                    dispatch: () => null});
 
 export const Provider = (props: { children: React.ReactNode; }) =>{
-    return <AppContext.Provider value={jamesUser}>
+    const [state, dispatch] = useReducer(reducer, jamesUser)
+    
+    return <AppContext.Provider value={{state,dispatch}}>
         {props.children}
     </AppContext.Provider>
 }

@@ -10,7 +10,7 @@ function Dashboard() {
     <div className="flex justify-center h-full  bg-gray-700">
       <div className=" w-full flex sm:flex-row flex-col items-center">
         <Tabs />
-        <div className="w-1/6"></div>
+        <div className="divs w-1/6"></div>
         <div className="feed h-full sm:w-5/6 w-3/4 overflow-y-scroll">
           <Switch>
             

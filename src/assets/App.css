@@ -172,6 +172,7 @@ body,
 .feed {
   scrollbar-width: none;
   -ms-overflow-style: none;
+  min-width: 900px;
 }
 
 .feed::-webkit-scrollbar {
@@ -241,6 +242,10 @@ body,
   }
 }
 
+.divs {
+  min-width: 190px;
+}
+
 .rot {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
@@ -253,6 +258,10 @@ body,
           transform: rotate(180deg);
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
+}
+
+.createProject {
+  min-width: 330px;
 }
 
 @-webkit-keyframes fadeIn {

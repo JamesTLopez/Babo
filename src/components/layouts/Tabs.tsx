@@ -16,6 +16,7 @@ function Tabs() {
   return (
     <Consumer>
       {(User) => {
+        let {state,dispatch} = User;
         return (
           <div className="tab sm:w-1/6 sm:fixed relative w-full sm:h-full bg-gray-800">
             <div className="button-container flex items-center justify-center w-full ">
@@ -37,7 +38,7 @@ function Tabs() {
                   <h1 className="text-white">Projects</h1>
                   <div className="sep"></div>
                   <div className="nav flex flex-col sm:items-start items-center">
-                    {User.allProjects.map((proje, index) => (
+                    {state.allProjects.map((proje, index) => (
                       <Link
                         key={index}
                         to={`/dashboard/projects/${proje.title}`}

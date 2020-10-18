@@ -146,6 +146,7 @@ body,
     width: 0px;
     background: transparent;
   }
+  min-width: 900px;
 }
 
 .project-nav {
@@ -197,6 +198,10 @@ body,
   }
 }
 
+.divs{
+  min-width: 190px;
+}
+
 .rot{
   transform: rotate(45deg);
   transition: all 0.4s;
@@ -204,6 +209,10 @@ body,
 .rotback{
   transform: rotate(180deg);
   transition: all 0.4s;
+}
+
+.createProject{
+  min-width: 330px;
 }
 
 
