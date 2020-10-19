@@ -15,8 +15,10 @@ function Tabs() {
 
   return (
     <Consumer>
-      {(User) => {
-        let {state,dispatch} = User;
+      {(Projects) => {
+        let {state,dispatch} = Projects;
+        let allProjects = state.allProjects;
+
         return (
           <div className="tab sm:w-1/6 sm:fixed relative w-full sm:h-full bg-gray-800">
             <div className="button-container flex items-center justify-center w-full ">

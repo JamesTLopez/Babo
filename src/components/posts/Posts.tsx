@@ -1,10 +1,10 @@
 import React from "react";
 import Post from "./Post";
-import { project } from "../../context/context";
+import { project } from "../../context/state";
 
-const Posts: React.FC<project> = ({  posts }) => {
+const Posts: React.FC<project> = ({posts}) => {
   return (
-    <div className=" flex items-center  flex-col w-full">
+    <div className=" flex items-center flex-col w-full">
       {posts.map((post, index) => (
         <Post
           key={index}
