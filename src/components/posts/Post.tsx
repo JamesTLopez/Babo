@@ -151,7 +151,7 @@ const Post: React.FC<postValues> = ({ title, hours, date, description }) => {
                   className="h-4"
                   onClick={() => {
                     setDelete(!deletes);
-                    dispatch({ title: id, payload: "James", type: "DELETE_POST" })
+                    dispatch({ title: id, payload: `${postValues.title}`, type: "DELETE_POST" })
                   }}
                   src={Delete}
                   alt="Delete Message"

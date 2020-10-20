@@ -8,8 +8,6 @@ import { User, jamesUser, jamesProject, project } from "./state";
 export const projectsReducer = (state: any, action: any) => {
   switch (action.type) {
     case "DELETE_POST":
-      console.log("Project Reducer works");
-
       let post = state.allProjects.map((x:any) => {
         if(x.title === action.title){
             let news = {...x}
