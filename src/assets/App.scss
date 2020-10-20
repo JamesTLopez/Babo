@@ -7,7 +7,6 @@ body,
   padding: 0;
   margin: 0;
   width: 100%;
-  overflow-y: hidden;
   font-family: "Libre Baskerville", serif;
 }
 
@@ -119,6 +118,9 @@ body,
 .transition {
   transition: all 0.6s;
 }
+.head{
+  z-index: 1000;
+}
 
 .post {
   min-width: 300px;
@@ -130,9 +132,11 @@ body,
 }
 
 .tab {
+  margin-top: 0px;
   border-bottom: #00c2f381 2px solid;
   animation: fadeIn 0.5s;
   @media (min-width: 660px) {
+    margin-top: 96px;
     border-right: #00c2f381 2px solid;
   }
   min-width: 223px;
@@ -196,6 +200,9 @@ body,
       text-align: left;
     }
   }
+}
+.theTop{
+  margin-top: 6rem;
 }
 
 .divs{

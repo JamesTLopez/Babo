@@ -1,26 +1,31 @@
-import { replace } from "formik";
 import React, { createContext, useReducer } from "react";
-
-import { User, jamesUser, jamesProject, project } from "./state";
-
-
+import { User, jamesUser } from "./state";
 
 export const projectsReducer = (state: any, action: any) => {
   switch (action.type) {
-    case "DELETE_POST":
-      let post = state.allProjects.map((x:any) => {
-        if(x.title === action.title){
-            let news = {...x}
-            news.posts = x.posts.filter((x:any) => x.title !== action.payload)
-            return news
-        }
-        else{
-          return x;
-        }
-        });
+    case "CREATE_POST":
+      console.log(action.payload);
       return {
         ...state,
-        allProjects:post
+      };
+    case "UPDATE_POST":
+      console.log(action.payload);
+      return {
+        ...state,
+      };
+    case "DELETE_POST":
+      let post = state.allProjects.map((x: any) => {
+        if (x.title === action.title) {
+          let news = { ...x };
+          news.posts = x.posts.filter((x: any) => x.title !== action.payload);
+          return news;
+        } else {
+          return x;
+        }
+      });
+      return {
+        ...state,
+        allProjects: post,
       };
     default:
       console.log("reder");
@@ -28,20 +33,16 @@ export const projectsReducer = (state: any, action: any) => {
   }
 };
 
-
-
-export const AppContext = createContext<{ state: User; dispatch: any }>(
-  {
-    state: jamesUser,
-    dispatch: () => null,
-  }
-);
+export const AppContext = createContext<{ projectState: User; dispatch: any }>({
+  projectState: jamesUser,
+  dispatch: () => null,
+});
 
 export const Provider = (props: { children: React.ReactNode }) => {
-  const [state, dispatch] = useReducer(projectsReducer, jamesUser);
+  const [projectState, dispatch] = useReducer(projectsReducer, jamesUser);
 
   return (
-    <AppContext.Provider value={{ state, dispatch }}>
+    <AppContext.Provider value={{ projectState, dispatch }}>
       {props.children}
     </AppContext.Provider>
   );

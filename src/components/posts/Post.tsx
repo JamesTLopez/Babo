@@ -56,7 +56,7 @@ const Post: React.FC<postValues> = ({ title, hours, date, description }) => {
     {({dispatch}) => { 
     
     return(<>
-      {deletes?<div className={`post fadeIn h-full sm:w-3/4 xl:w-4/6  bg-gray-800 my-5 rounded-lg flex justify-between flex-col sm:flex-row shadow-xl `}>
+      {deletes?<div className={`post fadeIn h-full sm:w-3/4 xl:w-4/6   bg-gray-800 my-5 rounded-lg flex justify-between flex-col sm:flex-row shadow-xl `}>
         
         <div className="image flex flex-col items-center m-2 ">
           <img
