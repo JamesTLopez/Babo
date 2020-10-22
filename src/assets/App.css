@@ -82,6 +82,46 @@ body,
   font-size: 20px;
 }
 
+#home #top #navigation .stickyNav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding-top: 15px;
+  -webkit-box-shadow: 0px 13px 5px rgba(0, 0, 0, 0.404);
+          box-shadow: 0px 13px 5px rgba(0, 0, 0, 0.404);
+  border-color: rgba(34, 34, 34, 0.1);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.2) 0 0 30px;
+          box-shadow: rgba(0, 0, 0, 0.2) 0 0 30px;
+  background-color: #fff;
+  z-index: 100;
+  height: 75px;
+  -webkit-animation: fadeInSlide 0.4s;
+          animation: fadeInSlide 0.4s;
+}
+
+#home #top #navigation .stickyNav ul li a {
+  color: black;
+}
+
+@-webkit-keyframes fadeInSlide {
+  from {
+    top: -30px;
+  }
+  to {
+    top: 0px;
+  }
+}
+
+@keyframes fadeInSlide {
+  from {
+    top: -30px;
+  }
+  to {
+    top: 0px;
+  }
+}
+
 #home #top #navigation img {
   background-color: #2a4175;
   border-radius: 10px;
@@ -96,8 +136,12 @@ body,
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
   position: relative;
   right: 10%;
+  width: 100%;
 }
 
 #home #top #navigation ul li {
@@ -197,7 +241,8 @@ body,
   margin-top: 5em;
 }
 
-#home #about .about-content #example #left-pane, #home #about .about-content #example #right-pane {
+#home #about .about-content #example #left-pane,
+#home #about .about-content #example #right-pane {
   margin-top: 2em;
 }
 
@@ -231,9 +276,43 @@ body,
         -ms-flex-direction: row;
             flex-direction: row;
   }
-  #home #about .about-content #example #left-pane, #home #about .about-content #example #right-pane {
+  #home #about .about-content #example #left-pane,
+  #home #about .about-content #example #right-pane {
     margin-top: 0em;
   }
+}
+
+#home #products {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 72px;
+  margin-top: 13em;
+}
+
+#home #products .products-content {
+  margin: 0 auto;
+  margin-top: 0px;
+  text-align: center;
+  margin-top: 72px;
+}
+
+#home #products .products-content h1 {
+  font-size: 48px;
+  color: #23252d;
+  font-weight: lighter;
+}
+
+#home #products .products-content p {
+  font-size: 26px;
+  color: #82878c;
+  margin-top: 0.5em;
 }
 
 .header-background {
