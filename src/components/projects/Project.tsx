@@ -11,7 +11,6 @@ const Project: React.FC<any> = ({state}) => {
   let posts = allProjects.filter((x: any) => x.title === id);
   let projectPosts = posts[0];
 
-  console.log(state)
   return (
     <div key={projectPosts.title} className="p-10 relative flex flex-col">
       <div className="sm:flex items-center hidden h-12">

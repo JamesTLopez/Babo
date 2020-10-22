@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
 
 html,
 body,
@@ -7,6 +8,7 @@ body,
   padding: 0;
   margin: 0;
   width: 100%;
+
   font-family: "Libre Baskerville", serif;
 }
 
@@ -44,16 +46,150 @@ body,
   }
 }
 
+#home {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  font-family: "Roboto Slab", serif;
+  #top {
+    width: 100%;
+    #navigation {
+      padding: 1.2em 0 0px;
+      display: flex;
+      position: relative;
+      margin: 0 auto;
+      max-width: 1600px;
+      width: 100%;
+      font-size: 20px;
+      img {
+        background-color: #2a4175;
+        border-radius: 10px;
+        position: relative;
+        left: 11%;
+        top: 20%;
+        height: 5rem;
+      }
+      ul {
+        list-style: none;
+        display: flex;
+        position: relative;
+        right: 10%;
+        li {
+          padding: 5px;
+          a {
+            padding: 20px;
+            color: white;
+            opacity: 0.8;
+            transition: all 0.3s;
+            &:hover {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+    #header-desc {
+      position: relative;
+      left: 5%;
+      max-width: 1600px;
+      margin: 0 auto;
+      margin-top: 0px;
+      position: relative;
+      margin-top: 12em;
+      h1 {
+        color: #ffffff;
+        font-size: 42px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+      p {
+        margin-top: 1em;
+        font-family: Arial, sans-serif;
+        color: rgba(255, 255, 255, 0.808);
+        font-size: 20px;
+        font-weight: 400;
+      }
+      #buttons{
+        margin-top: 3em;
+
+        a{
+          font-size:20px;
+          color:#4c78e1;
+          background-color: white;
+          padding:1.2em 2em 1.2em 2em;
+          margin-right:2em;
+        }
+        h2{
+          font-size: 25px;
+          color: rgba(255, 255, 255, 0.616);
+        }
+      }
+    }
+  }
+  #about {
+    .about-content {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      text-align: center;
+      margin-top: 72px;
+
+      h1 {
+        font-size: 48px;
+        color: #23252d;
+        font-weight: lighter;
+      }
+      p {
+        font-size: 26px;
+        color: #82878c;
+        margin-top: 0.5em;
+      }
+      #example{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin-top: 5em;
+        #left-pane, #right-pane{
+          margin-top: 2em;
+        }
+        .pane{
+          display: flex;
+          margin-left: 2em;
+          flex-direction: column;
+          justify-content: center;
+          h1{
+            font-size: 35px;
+          }
+          p{
+            font-size: 26px;
+            text-align: left;
+          }
+        }
+      }
+      @media (min-width:660px) {
+
+            #example{
+              flex-direction: row;
+              #left-pane, #right-pane{
+                margin-top: 0em;
+              }
+            }
+          
+        
+      }
+    }
+  }
+}
 
 //HOME
 
-.bg{
-  background-image: url('../images/wall.jpeg');
-  filter: brightness(60%);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+.header-background {
   background-size: cover;
+  background-position: center center;
+  background-image: url("../images/BaboBG.png");
+  width: 100%;
+  height: 750px;
+  margin: 0px auto;
 }
 
 //HEADER LOGO ANI
@@ -118,7 +254,7 @@ body,
 .transition {
   transition: all 0.6s;
 }
-.head{
+.head {
   z-index: 1000;
 }
 
@@ -158,28 +294,26 @@ body,
   .sep {
     display: hidden;
   }
-  .nav{
+  .nav {
     margin: 5px 0px 5px 0px;
     a {
       display: flex;
       align-items: center;
-      color:white;
+      color: white;
       width: 90%;
       padding: 5px 0px 5px 0px;
       margin: 2px 0px 2px 0px;
       border-radius: 10px;
       text-align: center;
       transition: all 0.5s;
-      img{
+      img {
         margin: 0px 12px 0px 2px;
       }
-      &:hover{
+      &:hover {
         background-color: rgba(255, 255, 255, 0.397);
       }
       @media (min-width: 660px) {
- 
-          text-align: left;
-        
+        text-align: left;
       }
     }
   }
@@ -188,7 +322,7 @@ body,
     padding: 6px 0px 6px 0px;
     margin-top: 20px;
     text-align: center;
-    color:#43658b;
+    color: #43658b;
   }
   @media (min-width: 660px) {
     .sep {
@@ -201,27 +335,26 @@ body,
     }
   }
 }
-.theTop{
+.theTop {
   margin-top: 6rem;
 }
 
-.divs{
+.divs {
   min-width: 190px;
 }
 
-.rot{
+.rot {
   transform: rotate(45deg);
   transition: all 0.4s;
 }
-.rotback{
+.rotback {
   transform: rotate(180deg);
   transition: all 0.4s;
 }
 
-.createProject{
+.createProject {
   min-width: 330px;
 }
-
 
 @keyframes fadeIn {
   from {

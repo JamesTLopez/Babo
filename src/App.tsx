@@ -1,7 +1,6 @@
 import React from "react";
 import "./assets/App.css";
 import "./assets/main.css";
-import Header from "./components/layouts/Header";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Dashboard from "./components/pages/Dashboard";
 import Home from "./components/pages/Home";
@@ -12,8 +11,7 @@ function App() {
   return (
     <Provider>
       <Router>
-        <div className="relative h-screen overflow-y-hidden max-w-full bg-gray-700 ">
-          {/* <Header /> */}
+        <div className="relative h-screen bg-gray-700">
           <Switch>
             <Route path="/home" component={Home}></Route>
             <Route path="/dashboard" component={Dashboard}></Route>

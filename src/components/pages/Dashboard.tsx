@@ -19,6 +19,7 @@ function Dashboard() {
           <div className="theTop w-full flex sm:flex-row flex-col items-center">
             <Tabs />
             <div className="divs w-1/6"></div>
+          
             <div className="feed h-full sm:w-5/6 w-3/4 overflow-y-scroll">
               <Switch>
                 <Route path="/dashboard/projects/:id">

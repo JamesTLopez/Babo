@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@500&display=swap");
 html,
 body,
 #root {
@@ -53,14 +54,195 @@ body,
           transform: rotateZ(45deg) translate(-8px, -6px);
 }
 
-.bg {
-  background-image: url("../images/wall.jpeg");
-  -webkit-filter: brightness(60%);
-          filter: brightness(60%);
-  background-position: center center;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
+#home {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: white;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  font-family: "Roboto Slab", serif;
+}
+
+#home #top {
+  width: 100%;
+}
+
+#home #top #navigation {
+  padding: 1.2em 0 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  margin: 0 auto;
+  max-width: 1600px;
+  width: 100%;
+  font-size: 20px;
+}
+
+#home #top #navigation img {
+  background-color: #2a4175;
+  border-radius: 10px;
+  position: relative;
+  left: 11%;
+  top: 20%;
+  height: 5rem;
+}
+
+#home #top #navigation ul {
+  list-style: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+  right: 10%;
+}
+
+#home #top #navigation ul li {
+  padding: 5px;
+}
+
+#home #top #navigation ul li a {
+  padding: 20px;
+  color: white;
+  opacity: 0.8;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+#home #top #navigation ul li a:hover {
+  opacity: 1;
+}
+
+#home #top #header-desc {
+  position: relative;
+  left: 5%;
+  max-width: 1600px;
+  margin: 0 auto;
+  margin-top: 0px;
+  position: relative;
+  margin-top: 12em;
+}
+
+#home #top #header-desc h1 {
+  color: #ffffff;
+  font-size: 42px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+#home #top #header-desc p {
+  margin-top: 1em;
+  font-family: Arial, sans-serif;
+  color: rgba(255, 255, 255, 0.808);
+  font-size: 20px;
+  font-weight: 400;
+}
+
+#home #top #header-desc #buttons {
+  margin-top: 3em;
+}
+
+#home #top #header-desc #buttons a {
+  font-size: 20px;
+  color: #4c78e1;
+  background-color: white;
+  padding: 1.2em 2em 1.2em 2em;
+  margin-right: 2em;
+}
+
+#home #top #header-desc #buttons h2 {
+  font-size: 25px;
+  color: rgba(255, 255, 255, 0.616);
+}
+
+#home #about .about-content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 72px;
+}
+
+#home #about .about-content h1 {
+  font-size: 48px;
+  color: #23252d;
+  font-weight: lighter;
+}
+
+#home #about .about-content p {
+  font-size: 26px;
+  color: #82878c;
+  margin-top: 0.5em;
+}
+
+#home #about .about-content #example {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 5em;
+}
+
+#home #about .about-content #example #left-pane, #home #about .about-content #example #right-pane {
+  margin-top: 2em;
+}
+
+#home #about .about-content #example .pane {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 2em;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+#home #about .about-content #example .pane h1 {
+  font-size: 35px;
+}
+
+#home #about .about-content #example .pane p {
+  font-size: 26px;
+  text-align: left;
+}
+
+@media (min-width: 660px) {
+  #home #about .about-content #example {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  #home #about .about-content #example #left-pane, #home #about .about-content #example #right-pane {
+    margin-top: 0em;
+  }
+}
+
+.header-background {
   background-size: cover;
+  background-position: center center;
+  background-image: url("../images/BaboBG.png");
+  width: 100%;
+  height: 750px;
+  margin: 0px auto;
 }
 
 #logo {
