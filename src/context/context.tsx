@@ -3,6 +3,14 @@ import { User, jamesUser } from "./state";
 
 export const projectsReducer = (state: any, action: any) => {
   switch (action.type) {
+    case"DELETE_PROJECT":
+    
+      let projects = state.allProjects.filter((x:any) => x.title != action.payload);
+
+      return{
+        ...state,
+        allProjects:projects
+      }
     case "CREATE_POST":
       console.log(action.payload);
       return {

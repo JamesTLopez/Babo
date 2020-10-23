@@ -49,7 +49,7 @@ function Tabs() {
                 <img className="h-5" src={Inbox} alt="inbox" /> {"Music"}
               </Link>
 
-              <Link to="/dashboard/createproject">
+              <Link to="/createproject">
                 <img className="h-3" src={Plus} alt="inbox" />{" "}
                 <span className="opacity-50 text-sm">Create Projects</span>
               </Link>
