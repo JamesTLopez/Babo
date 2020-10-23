@@ -83,24 +83,33 @@ body,
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      input{
-        margin: 5px 0 5px 0;
-        padding: 10px;
+      form{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
         width: 80%;
-        height: 35px;
-        border-radius: 20px;
-        border-style: none;
-      }
-      .button-group{
-        margin: 10px 0 10px 0;
-        button{
-          font-size: 13px;
-          padding: 8px;
-          border-radius: 15px;
-          color:rgb(255, 255, 255);
-          background-color: #3a4453;
+        input{
+          margin: 5px 0 5px 0;
+          padding: 10px;
+       
+          height: 35px;
+          border-radius: 20px;
+          border-style: none;
+        }
+        .button-group{
+          margin: 10px 0 10px 0;
+          display: flex;
+          justify-content: center;
+          button{
+            font-size: 13px;
+            padding: 8px;
+            border-radius: 15px;
+            color:rgb(255, 255, 255);
+            background-color: #3a4453;
+          }
         }
       }
+  
     }
     #create-projects{
       margin-top: 50px;

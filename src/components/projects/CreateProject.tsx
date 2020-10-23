@@ -8,9 +8,10 @@ function CreateProject() {
   return (
     <Consumer>
       {(Projects) => {
-        let state = Projects.projectState;
-        console.log(state);
-        let projectList = state.allProjects;
+
+        let {projectState ,dispatch} = Projects;
+        console.log(projectState);
+        let projectList = projectState.allProjects;
         return (
           <div className="createTasks">
             <div className="content">
@@ -18,14 +19,30 @@ function CreateProject() {
                 <h1>Project Manager</h1>
               </section>
               <section id="create-form">
-                <input type="text" placeholder="Project name..."></input>
-                <div className="button-group">
-                  <button>Add Project</button>
-                </div>
+                <Formik
+                  initialValues={{ title: "", posts: [] }}
+                  onSubmit={(values, actions) => {
+          
+                    dispatch({payload:values,type:"CREATE_PROJECT"})
+                    actions.setSubmitting(false);
+                  }}
+                >
+                  <Form>
+                    <Field
+                      className="bg-gray-700"
+                      id="title"
+                      name="title"
+                      placeholder="title"
+                    />
+                    <div className="button-group">
+                      <button>Add Project</button>
+                    </div>
+                  </Form>
+                </Formik>
               </section>
               <section id="create-projects">
                 {projectList.map((proj) => (
-                 <ProjectLinks key={proj.title} title={proj.title}/>
+                  <ProjectLinks key={proj.title} title={proj.title} />
                 ))}
               </section>
             </div>

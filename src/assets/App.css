@@ -117,20 +117,39 @@ body,
           align-items: center;
 }
 
-.createTasks .content #create-form input {
+.createTasks .content #create-form form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 80%;
+}
+
+.createTasks .content #create-form form input {
   margin: 5px 0 5px 0;
   padding: 10px;
-  width: 80%;
   height: 35px;
   border-radius: 20px;
   border-style: none;
 }
 
-.createTasks .content #create-form .button-group {
+.createTasks .content #create-form form .button-group {
   margin: 10px 0 10px 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
 }
 
-.createTasks .content #create-form .button-group button {
+.createTasks .content #create-form form .button-group button {
   font-size: 13px;
   padding: 8px;
   border-radius: 15px;
