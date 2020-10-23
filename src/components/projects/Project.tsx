@@ -3,8 +3,7 @@ import Createpost from "../posts/Createpost";
 import Posts from "../posts/Posts";
 import { useParams } from "react-router-dom";
 
-const Project: React.FC<any> = ({state}) => {
-
+const Project: React.FC<any> = ({ state }) => {
   let { id }: any = useParams();
 
   let allProjects = state.allProjects;
@@ -25,8 +24,12 @@ const Project: React.FC<any> = ({state}) => {
           <Posts
             key={projectPosts.title}
             title={projectPosts.title}
-            posts={projectPosts.posts}
           />
+          {/* <Posts
+            key={projectPosts.title}
+            title={projectPosts.title}
+            posts={projectPosts.posts}
+          /> */}
         </div>
         <div className="sm:visible hidden sm:w-1/3 md:relative absolute md:flex flex-col items-center">
           <Createpost />
@@ -34,7 +37,6 @@ const Project: React.FC<any> = ({state}) => {
       </div>
     </div>
   );
-
 };
 
 export default Project;
