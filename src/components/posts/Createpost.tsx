@@ -30,7 +30,7 @@ function Createpost() {
       {({ dispatch }) => {
         return (
           <div className="fixed sm:w-3/4 md:w-1/4">
-            <div className="post fadeIn bg-gray-800 my-5 rounded-lg flex justify-between flex-col  shadow-xl ">
+            <div className="post bg-gray-800 my-5 rounded-lg flex justify-between flex-col  shadow-xl ">
               <div className="p-3 flex items-center w-full">
                 <div className="flex flex-1 justify-start">
                   <h1 className="text-white">Create Post</h1>

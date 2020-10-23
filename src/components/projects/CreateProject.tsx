@@ -10,10 +10,10 @@ function CreateProject() {
       {(Projects) => {
 
         let {projectState ,dispatch} = Projects;
-        console.log(projectState);
+   
         let projectList = projectState.allProjects;
         return (
-          <div className="createTasks">
+          <div className="fadeIn createTasks">
             <div className="content">
               <section id="create-title">
                 <h1>Project Manager</h1>
@@ -22,7 +22,7 @@ function CreateProject() {
                 <Formik
                   initialValues={{ title: "", posts: [] }}
                   onSubmit={(values, actions) => {
-          
+                    
                     dispatch({payload:values,type:"CREATE_PROJECT"})
                     actions.setSubmitting(false);
                   }}
@@ -32,7 +32,7 @@ function CreateProject() {
                       className="bg-gray-700"
                       id="title"
                       name="title"
-                      placeholder="title"
+                      placeholder="Project title..."
                     />
                     <div className="button-group">
                       <button>Add Project</button>
