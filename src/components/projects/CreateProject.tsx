@@ -1,6 +1,8 @@
 import React from "react";
 import { Field, Form, Formik } from "formik";
 
+import { Consumer } from "../../context/context";
+
 interface postValues {
   title: string;
   time: number;
@@ -9,44 +11,69 @@ interface postValues {
 
 function CreateProject() {
   return (
-    <div className="fadeIn createProject p-10 relative flex items-center justify-center">
-      <div className="container flex flex-col justify-center sm:w-3/6 w-full relative bg-gray-800  rounded-md">
-        <div className="title flex p-5 items-center bg-gray-900 h-full rounded-md">
-          <h1 className="ml-5 text-white">Create Project</h1>
-        </div>
-        <div className="main p-5">
-          <div className="sm:ml-5 input ">
-            <Formik
-              initialValues={{ title: "", time: 0, img: "" }}
-              onSubmit={(values, actions) => {
-                actions.setSubmitting(false);
-              }}
-            >
-              <Form className="flex sm:flex-row flex-col text-white">
-                <div className="flex flex-1 flex-col">
-                  <label htmlFor="title">Project Name</label>
-                  <Field
-                    className=" sm:w-3/4 w-full bg-gray-900 mt-2 rounded-md h-8"
-                    id="title"
-                    name="title"
-                    placeholder=""
-                  />
+    <Consumer>
+      {(Projects) => {
+        let state = Projects.projectState;
+        console.log(state);
+        let projectList = state.allProjects;
+        return (
+          <div className="createTasks">
+            <div className="content">
+              <section id="create-title">
+                <h1>Project Manager</h1>
+              </section>
+              <section id="create-form">
+                <input type="text" placeholder="Project name..."></input>
+                <div className="button-group">
+                  <button>Add Project</button>
                 </div>
-                <div className="flex flex-1 flex-col">
-                  <label htmlFor="title">Project Duration</label>
-                  <Field
-                    className="sm:w-3/4 w-full bg-gray-900 mt-2 rounded-md h-8"
-                    id="title"
-                    name="title"
-                    placeholder=""
-                  />
-                </div>
-              </Form>
-            </Formik>
+              </section>
+              <section id="create-projects">
+                {projectList.map((proj) => (
+                  <div id="project-link">
+                    <label>{proj.title}</label>
+                    <div className="item-group">
+                      <button>
+                        <svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 1024 1024"
+                          height="1.5em"
+                          width="1.5em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path d="M360 184h-8c4.4 0 8-3.6 8-8v8h304v-8c0 4.4 3.6 8 8 8h-8v72h72v-80c0-35.3-28.7-64-64-64H352c-35.3 0-64 28.7-64 64v80h72v-72zm504 72H160c-17.7 0-32 14.3-32 32v32c0 4.4 3.6 8 8 8h60.4l24.7 523c1.6 34.1 29.8 61 63.9 61h454c34.2 0 62.3-26.8 63.9-61l24.7-523H888c4.4 0 8-3.6 8-8v-32c0-17.7-14.3-32-32-32zM731.3 840H292.7l-24.2-512h487l-24.2 512z"></path>
+                        </svg>
+                      </button>
+                      <button>
+                        <svg
+                          stroke="currentColor"
+                          fill="currentColor"
+                          stroke-width="0"
+                          viewBox="0 0 16 16"
+                          height="1.5em"
+                          width="1.5em"
+                          xmlns="http://www.w3.org/2000/svg"
+                        >
+                          <path
+                            fill-rule="evenodd"
+                            d="M14 3H2a1 1 0 00-1 1v8a1 1 0 001 1h12a1 1 0 001-1V4a1 1 0 00-1-1zM2 2a2 2 0 00-2 2v8a2 2 0 002 2h12a2 2 0 002-2V4a2 2 0 00-2-2H2z"
+                            clip-rule="evenodd"
+                          ></path>
+                          <rect width="3" height="3" x="2" y="9" rx="1"></rect>
+                          <path d="M1 5h14v2H1z"></path>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                ))}
+              </section>
+            </div>
           </div>
-        </div>
-      </div>
-    </div>
+        );
+      }}
+    </Consumer>
   );
 }
 

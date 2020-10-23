@@ -14,8 +14,8 @@ const Posts: React.FC<proj> = ({ key, title }) => {
 
   return (
     <Consumer>
-      {({ projectState, dispatch }) => {
-        
+      {({ projectState }) => {
+
         let allProjects = projectState.allProjects;
         let posts = allProjects.filter((x: any) => x.title === id);
         let projectPosts = posts[0];
@@ -28,7 +28,6 @@ const Posts: React.FC<proj> = ({ key, title }) => {
                 title={post.title}
                 hours={post.hours}
                 date={post.date}
-                dispatch={dispatch}
               />
             ))}
           </div>
