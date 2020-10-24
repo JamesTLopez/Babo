@@ -53,6 +53,15 @@ body,
   }
 }
 
+.homeHam{
+  visibility: visible;
+  @media (min-width:1280px) {
+    visibility: hidden;
+
+  }
+
+}
+
 .createTasks {
 
   display:flex;
@@ -184,11 +193,13 @@ body,
     #navigation {
       padding: 1.2em 0 0px;
       display: flex;
-      position: relative;
-      margin: 0 auto;
-      max-width: 1600px;
-      width: 100%;
-      font-size: 20px;
+      
+      // position: relative;
+      // margin: 0 auto;
+      // max-width: 1600px;
+      // width: 100%;
+      // font-size: 20px;
+      visibility: hidden;
       .stickyNav {
         position: fixed;
         top: 0;
@@ -247,6 +258,22 @@ body,
             }
           }
         }
+      }
+      @media (min-width:1280px) {
+        visibility: visible;
+        padding: 1.2em 0 0px;
+        display: flex;
+     
+        position: relative;
+        margin: 0 auto;
+        max-width: 1600px;
+        width: 100%;
+        font-size: 20px;
+        ul{
+
+        }
+
+      
       }
     }
     #header-desc {

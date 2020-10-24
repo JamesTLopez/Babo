@@ -6,6 +6,11 @@ import { Link } from "react-router-dom";
 
 function Home() {
   const [fixedNav, isFixed] = useState<boolean>(false);
+  const [menu, isMenuSelected] = useState<boolean>(false);
+
+  const selected = () => {
+    isMenuSelected(!menu);
+  };
 
   const watch = () => {
     console.log(window.scrollY);
@@ -56,6 +61,11 @@ function Home() {
                     <Link to="/dashboard">TRY IT OUT!</Link>
                   </li>
                 </ul>
+                <div onClick={selected} className="homeHam ham">
+                  <div className={menu ? "line line-1" : "line "}></div>
+                  <div className={menu ? "line line-2" : "line "}></div>
+                  <div className={menu ? "line line-3" : "line"}></div>
+                </div>
               </div>
             </section>
             <section id="header-desc">
