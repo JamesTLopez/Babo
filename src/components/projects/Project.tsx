@@ -21,15 +21,7 @@ const Project: React.FC<any> = ({ state }) => {
       </div>
       <div className="flex flex-wrap">
         <div className="sm:w-2/3  w-full flex flex-col items-center ">
-          <Posts
-            key={projectPosts.title}
-            title={projectPosts.title}
-          />
-          {/* <Posts
-            key={projectPosts.title}
-            title={projectPosts.title}
-            posts={projectPosts.posts}
-          /> */}
+          <Posts />
         </div>
         <div className="sm:visible hidden sm:w-1/3 md:relative absolute md:flex flex-col items-center">
           <Createpost />

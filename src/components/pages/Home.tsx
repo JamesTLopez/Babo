@@ -13,7 +13,7 @@ function Home() {
   };
 
   const watch = () => {
-    console.log(window.scrollY);
+
     if (window.scrollY >= 130) {
       isFixed(true);
     } else {
@@ -61,11 +61,7 @@ function Home() {
                     <Link to="/dashboard">TRY IT OUT!</Link>
                   </li>
                 </ul>
-                <div onClick={selected} className="homeHam ham">
-                  <div className={menu ? "line line-1" : "line "}></div>
-                  <div className={menu ? "line line-2" : "line "}></div>
-                  <div className={menu ? "line line-3" : "line"}></div>
-                </div>
+               
               </div>
             </section>
             <section id="header-desc">
@@ -139,7 +135,7 @@ function Home() {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 viewBox="0 0 1024 1024"
                 height="1em"
                 width="1em"
@@ -156,7 +152,7 @@ function Home() {
               <svg
                 stroke="currentColor"
                 fill="currentColor"
-                stroke-width="0"
+                strokeWidth="0"
                 role="img"
                 viewBox="0 0 24 24"
                 height="1em"

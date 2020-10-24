@@ -24,7 +24,7 @@ export const projectsReducer = (state: any, action: any) => {
         allProject: state.allProjects.push(action.payload),
       };
     case "CREATE_POST":
-
+      
       state.allProjects.map((x: any) => {
         if (x.title === action.title) {
           let news = { ...x };
@@ -35,11 +35,15 @@ export const projectsReducer = (state: any, action: any) => {
         }
       });
 
+
       return {
         ...state
       };
     case "UPDATE_POST":
+      console.log(action.title);
       console.log(action.payload);
+
+      
       return {
         ...state
       };

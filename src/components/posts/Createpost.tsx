@@ -5,6 +5,7 @@ import { Consumer } from "../../context/context";
 import Plus from "../../images/plus.svg";
 
 interface postValues {
+  id:number
   title: string;
   hours: number;
   date: string;
@@ -17,6 +18,7 @@ function Createpost() {
   let { id }: any = useParams();
 
   let [postValues] = useState<postValues>({
+    id:1,
     title: "",
     hours: 0,
     date: "",
@@ -27,7 +29,10 @@ function Createpost() {
   };
   return (
     <Consumer>
-      {({ dispatch }) => {
+      {({projectState, dispatch }) => {
+        let  projects = projectState.allProjects;
+        let post = projects.filter((x:any) => id === x.title);
+
         return (
           <div className="fixed sm:w-3/4 md:w-1/4">
             <div className="post bg-gray-800 my-5 rounded-lg flex justify-between flex-col  shadow-xl ">
@@ -53,6 +58,8 @@ function Createpost() {
                   <Formik
                     initialValues={postValues}
                     onSubmit={(values) => {
+                    
+                      values.id = post[0].posts.length +1;
                       dispatch({title:id,payload:values,type:"CREATE_POST"})
                     }}
                   >

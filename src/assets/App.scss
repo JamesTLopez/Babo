@@ -55,9 +55,10 @@ body,
 
 .homeHam{
   visibility: visible;
+ 
   @media (min-width:1280px) {
     visibility: hidden;
-
+    justify-content: flex-end;
   }
 
 }
@@ -194,11 +195,6 @@ body,
       padding: 1.2em 0 0px;
       display: flex;
       
-      // position: relative;
-      // margin: 0 auto;
-      // max-width: 1600px;
-      // width: 100%;
-      // font-size: 20px;
       visibility: hidden;
       .stickyNav {
         position: fixed;
@@ -263,7 +259,7 @@ body,
         visibility: visible;
         padding: 1.2em 0 0px;
         display: flex;
-     
+        
         position: relative;
         margin: 0 auto;
         max-width: 1600px;

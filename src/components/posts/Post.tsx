@@ -32,15 +32,14 @@ const Post: React.FC<postValues> = ({
   let [wordCount, setWordCount] = useState<number>(0);
 
   let { id }: any = useParams();
+
+
   useEffect(() => {
     if (postValues.description?.length !== undefined) {
       setWordCount(postValues.description.length);
     }
   }, [postValues.description]);
 
-  const activateText = () => {
-    setActivate(!activate);
-  };
 
   const words = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (e.target.value.length >= 255) {
@@ -92,12 +91,7 @@ const Post: React.FC<postValues> = ({
                         <Formik
                           initialValues={postValues}
                           onSubmit={(values, actions) => {
-                            setPost({
-                              title: values.title,
-                              hours: values.hours,
-                              date: values.date,
-                            });
-                            activateText();
+                            dispatch({title:id,payload:values,type:"UPDATE_POST"})
                             actions.setSubmitting(false);
                           }}
                         >
@@ -154,7 +148,7 @@ const Post: React.FC<postValues> = ({
                     </div>
                     <div className="flex-1 flex justify-end">
                       <button
-                        onClick={activateText}
+                        onClick={()=> {setActivate(!activate)}}
                         className="p-1 m-1 rounded-lg bg-yellow-500  text-xs text-white"
                       >
                         <img
