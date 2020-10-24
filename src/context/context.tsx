@@ -18,14 +18,14 @@ export const projectsReducer = (state: any, action: any) => {
         allProject: state.allProjects.push(action.payload),
       };
     case "UPDATE_PROJECT":
-      
+    
       return {
         ...state,
         allProject: state.allProjects.push(action.payload),
       };
     case "CREATE_POST":
-      // console.log(action.payload);
-      let temp = state.allProjects.map((x: any) => {
+
+      state.allProjects.map((x: any) => {
         if (x.title === action.title) {
           let news = { ...x };
           news.posts = x.posts.push(action.payload);
@@ -34,15 +34,14 @@ export const projectsReducer = (state: any, action: any) => {
           return x;
         }
       });
-      console.log(action.payload);
 
       return {
-        ...state,
+        ...state
       };
     case "UPDATE_POST":
       console.log(action.payload);
       return {
-        ...state,
+        ...state
       };
     case "DELETE_POST":
       let post = state.allProjects.map((x: any) => {

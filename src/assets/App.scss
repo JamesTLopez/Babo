@@ -250,7 +250,7 @@ body,
           a {
             padding: 20px;
             color: white;
-            font-size: 25px;
+            font-size: 20px;
             opacity: 0.8;
             transition: all 0.3s;
             &:hover {
@@ -397,6 +397,29 @@ body,
     text-align: center;
     margin-top: 72px;
     margin-top: 13em;
+    .contact-content {
+      margin: 0 auto;
+      margin-top: 0px;
+      text-align: center;
+      margin-top: 72px;
+      h1 {
+        font-size: 48px;
+        color: #23252d;
+        font-weight: lighter;
+      }
+      p {
+        font-size: 26px;
+        color: #82878c;
+        margin-top: 0.5em;
+      }
+      .contact-link{
+     
+        a{
+          
+          font-size: 30px;
+        }
+      }
+    }
 
   }
 }
