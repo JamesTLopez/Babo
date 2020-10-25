@@ -17,13 +17,6 @@ function Header() {
               <img id="logo" className="h-16" src={Babo} alt="Babo" />
             </Link>
           </div>
-          <div className="flex flex-1 justify-end items-center">
-            <div onClick={selected} className="sm:hidden ham">
-              <div className={menu ? "line line-1" : "line "}></div>
-              <div className={menu ? "line line-2" : "line "}></div>
-              <div className={menu ? "line line-3" : "line"}></div>
-            </div>
-          </div>
         </div>
         <div className="sm:bg-gray-900 sm:flex-1 sm:flex sm:justify-end sm:items-center text-lg font-bold">
           <nav

@@ -2,9 +2,10 @@ import React, { useEffect, useState } from "react";
 import ProfilesPic from "../../images/pro.jpg";
 import Edit from "../../images/edit.png";
 import Delete from "../../images/delete.png";
-import { Formik, Form, Field } from "formik";
+
 import { useParams } from "react-router-dom";
 import { Consumer } from "../../context/context";
+import UpdatePost from "./UpdatePost";
 
 interface postValues {
   title: string;
@@ -33,13 +34,11 @@ const Post: React.FC<postValues> = ({
 
   let { id }: any = useParams();
 
-
   useEffect(() => {
     if (postValues.description?.length !== undefined) {
       setWordCount(postValues.description.length);
     }
   }, [postValues.description]);
-
 
   const words = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     if (e.target.value.length >= 255) {
@@ -53,9 +52,10 @@ const Post: React.FC<postValues> = ({
       description: e.target.value,
       dispatch: dispatch,
     });
+    console.log(e.target.value);
+
     setWordCount(e.target.value.length);
   };
-
 
   return (
     <Consumer>
@@ -64,7 +64,7 @@ const Post: React.FC<postValues> = ({
           <>
             {deletes ? (
               <div
-                className={`post fadeIn h-full sm:w-3/4 xl:w-4/6   bg-gray-800 my-5 rounded-lg flex justify-between flex-col sm:flex-row shadow-xl `}
+                className={`post fadeIn  sm:w-3/4 xl:w-4/6   bg-gray-800 my-5 rounded-lg flex justify-between flex-col sm:flex-row shadow-xl `}
               >
                 <div className="image flex flex-col items-center m-2 ">
                   <img
@@ -72,83 +72,42 @@ const Post: React.FC<postValues> = ({
                     src={ProfilesPic}
                     alt="temp"
                   ></img>
-                  <div className="sm:visible   sm:my-1 vertical-divider h-full rounded-lg"></div>
+                  <div className="sm:visible sm:my-1 vertical-divider h-full rounded-lg"></div>
                 </div>
                 <div className="flex items-center justify-between flex-col w-full p-2 bg-gray-800 rounded-lg">
-                  <div className="flex w-11/12 ">
-                    <div className="flex-1 p-2  text-xs text-white flex flex-col ">
-                      <h2 className="text-lg font-bold opacity-100">
-                        {postValues.title}
-                      </h2>
-                      <h2 className="text-sm opacity-75">Learn Typescript</h2>
-                      <h2 className="opacity-50">{postValues.date}</h2>
-                      <h2 className="opacity-50">
-                        {postValues.hours} / 10.3 h
-                      </h2>
-                    </div>
-                    {activate ? (
-                      <div className="fadeIn p-2 flex-1 text-xs text-white flex flex-col">
-                        <Formik
-                          initialValues={postValues}
-                          onSubmit={(values, actions) => {
-                            dispatch({title:id,payload:values,type:"UPDATE_POST"})
-                            actions.setSubmitting(false);
-                          }}
-                        >
-                          <Form className="flex flex-col">
-                            <label htmlFor="title">Title</label>
-                            <Field
-                              className="bg-gray-700"
-                              id="title"
-                              name="title"
-                              placeholder="title"
-                            />
-                            <label htmlFor="date">Date</label>
-                            <Field
-                              className="bg-gray-700"
-                              id="date"
-                              name="date"
-                              placeholder="date"
-                            />
-                            <label htmlFor="hours">Hours Worked</label>
-                            <Field
-                              className="bg-gray-700"
-                              id="hours"
-                              name="hours"
-                              placeholder="Hours"
-                            />
-                            <div className="w-full flex justify-center mt-2">
-                              <button
-                                className="rounded-md bg-green-800 w-1/3"
-                                type="submit"
-                              >
-                                Submit
-                              </button>
-                            </div>
-                          </Form>
-                        </Formik>
+                  {!activate ? (
+                    <>
+                      <div className="flex w-11/12 ">
+                        <div className="flex-1 p-2  text-xs text-white flex flex-col ">
+                          <h2 className="text-lg font-bold opacity-100">
+                            {postValues.title}
+                          </h2>
+                          <h2 className="text-sm opacity-75">
+                            Learn Typescript
+                          </h2>
+                          <h2 className="opacity-50">{postValues.date}</h2>
+                          <h2 className="opacity-50">
+                            {postValues.hours} / 10.3 h
+                          </h2>
+                        </div>
                       </div>
-                    ) : null}
-                  </div>
-                  <div className="flex w-11/12 h-full items-center">
-                    <textarea
-                      className={` textareas w-full  outline-none resize-none rounded-lg text-white opacity-75 h-full bg-gray-900 p-2 ${
-                        activate ? "fadeIn" : ""
-                      }  `}
-                      disabled={!activate}
-                      onChange={words}
-                      value={postValues.description}
-                    />
-                  </div>
+                      <div className="flex w-11/12 h-full items-center">
+                        <textarea
+                          className={` textareas w-full  outline-none resize-none rounded-lg text-white opacity-75 h-full bg-gray-900 p-2 `}
+                          disabled={true}
+                        />
+                      </div>
+                    </>
+                  ) : (
+                    <UpdatePost Title={postValues.title} Date={postValues.date} Hours={postValues.hours} Description={postValues.description}/>
+                  )}
+
                   <div className="w-11/12 flex py-2 px-1">
-                    <div className={`${activate ? null : "hidden"} flex-1`}>
-                      <label className="text-green-400 ">
-                        {wordCount} | 255
-                      </label>
-                    </div>
                     <div className="flex-1 flex justify-end">
                       <button
-                        onClick={()=> {setActivate(!activate)}}
+                        onClick={() => {
+                          setActivate(!activate);
+                        }}
                         className="p-1 m-1 rounded-lg bg-yellow-500  text-xs text-white"
                       >
                         <img
@@ -176,9 +135,7 @@ const Post: React.FC<postValues> = ({
                   </div>
                 </div>
               </div>
-            ) : (
-              <></>
-            )}
+            ) : null}
           </>
         );
       }}

@@ -13,7 +13,6 @@ function Home() {
   };
 
   const watch = () => {
-
     if (window.scrollY >= 130) {
       isFixed(true);
     } else {
@@ -39,6 +38,13 @@ function Home() {
                 </div>
               )}
 
+                <div onClick={selected} className="sm:hidden ham">
+                  <div className={menu ? "line line-1" : "line "}></div>
+                  <div className={menu ? "line line-2" : "line "}></div>
+                  <div className={menu ? "line line-3" : "line"}></div>
+                </div>
+ 
+
               <div
                 id=""
                 className={
@@ -61,7 +67,6 @@ function Home() {
                     <Link to="/dashboard">TRY IT OUT!</Link>
                   </li>
                 </ul>
-               
               </div>
             </section>
             <section id="header-desc">

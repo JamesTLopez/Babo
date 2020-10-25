@@ -5,6 +5,7 @@ import Header from "../layouts/Header";
 import Tabs from "../layouts/Tabs";
 import CreateProject from "../projects/CreateProject";
 import Project from "../projects/Project";
+import Inbox from "./Inbox";
 
 function Dashboard() {
   return (
@@ -22,6 +23,10 @@ function Dashboard() {
           
             <div className="feed h-full sm:w-5/6 w-3/4 overflow-y-scroll">
               <Switch>
+              <Route
+                  path="/dashboard/inbox"
+                  component={Inbox}
+                />
                 <Route path="/dashboard/projects/:id">
                   <Project state={projectState} dispatch={dispatch}/>
                 </Route>

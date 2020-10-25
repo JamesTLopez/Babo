@@ -37,7 +37,7 @@ function Tabs() {
               <div className="flex flex-col w-full">
                 <div className="project-nav flex flex-col">
                   <div className="nav flex flex-col sm:items-start items-center">
-                    <Link to="/dashboard/projects">
+                    <Link to="/dashboard/inbox">
                       <img className="h-5" src={Inbox} alt="inbox" /> Inbox
                     </Link>
                     <Link to="/dashboard/projects">

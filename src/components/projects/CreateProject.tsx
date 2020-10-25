@@ -29,7 +29,7 @@ function CreateProject() {
                 >
                   <Form>
                     <Field
-                      className="bg-gray-700"
+                      className="bg-gray-700 text-white"
                       id="title"
                       name="title"
                       placeholder="Project title..."

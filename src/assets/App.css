@@ -90,7 +90,7 @@ body,
   background-position: center center;
   background-image: url("../images/dashboardbg.png");
   height: 100%;
-  font-family: 'Source Serif Pro', serif;
+  font-family: "Source Serif Pro", serif;
 }
 
 .createTasks .content {
@@ -566,6 +566,37 @@ body,
 
 #home #contact .contact-content .contact-link a {
   font-size: 30px;
+}
+
+.updatepost {
+  width: 91.666667%;
+}
+
+.updatepost form {
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.updatepost form label {
+  border-width: 0;
+  border-style: solid;
+  color: #e2e8f0;
+}
+
+.updatepost form input {
+  margin: 5px 0 5px 0;
+  padding: 13px;
+  height: 25px;
+  border-radius: 20px;
+  border: 3px solid #343c47;
+  color: #e2e8f0;
+  background-color: rgba(74, 85, 104, var(--bg-opacity));
 }
 
 .header-background {
