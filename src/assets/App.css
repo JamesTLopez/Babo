@@ -599,6 +599,10 @@ body,
   background-color: rgba(74, 85, 104, var(--bg-opacity));
 }
 
+.updatepost form button {
+  background-color: rgba(36, 189, 22, 0.74);
+}
+
 .header-background {
   background-size: cover;
   background-position: center center;

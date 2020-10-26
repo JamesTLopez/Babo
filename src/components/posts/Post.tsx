@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, {  useState } from "react";
 import ProfilesPic from "../../images/pro.jpg";
 import Edit from "../../images/edit.png";
 import Delete from "../../images/delete.png";
@@ -8,6 +8,7 @@ import { Consumer } from "../../context/context";
 import UpdatePost from "./UpdatePost";
 
 interface postValues {
+  id:number;
   title: string;
   hours: number;
   date: string;
@@ -15,7 +16,7 @@ interface postValues {
   dispatch?: () => void;
 }
 
-const Post: React.FC<postValues> = ({
+const Post: React.FC<postValues> = ({id,
   title,
   hours,
   date,
@@ -24,38 +25,17 @@ const Post: React.FC<postValues> = ({
 }) => {
   let [activate, setActivate] = useState<boolean>(false);
   let [deletes, setDelete] = useState<boolean>(true);
-  let [postValues, setPost] = useState<postValues>({
+  let [postValues, ] = useState<postValues>({
+    id:id,
     title: title,
     hours: hours,
     date: date,
     description: description,
   });
-  let [wordCount, setWordCount] = useState<number>(0);
 
-  let { id }: any = useParams();
 
-  useEffect(() => {
-    if (postValues.description?.length !== undefined) {
-      setWordCount(postValues.description.length);
-    }
-  }, [postValues.description]);
+  let { projectName }: any = useParams();
 
-  const words = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-    if (e.target.value.length >= 255) {
-      alert("Too many characters in description");
-      setActivate(!activate);
-    }
-    setPost({
-      title: postValues.title,
-      hours: postValues.hours,
-      date: postValues.date,
-      description: e.target.value,
-      dispatch: dispatch,
-    });
-    console.log(e.target.value);
-
-    setWordCount(e.target.value.length);
-  };
 
   return (
     <Consumer>
@@ -83,7 +63,7 @@ const Post: React.FC<postValues> = ({
                             {postValues.title}
                           </h2>
                           <h2 className="text-sm opacity-75">
-                            Learn Typescript
+                            {projectName}
                           </h2>
                           <h2 className="opacity-50">{postValues.date}</h2>
                           <h2 className="opacity-50">
@@ -99,7 +79,7 @@ const Post: React.FC<postValues> = ({
                       </div>
                     </>
                   ) : (
-                    <UpdatePost Title={postValues.title} Date={postValues.date} Hours={postValues.hours} Description={postValues.description}/>
+                    <UpdatePost id={postValues.id} title={postValues.title} date={postValues.date} hours={postValues.hours} description={postValues.description}/>
                   )}
 
                   <div className="w-11/12 flex py-2 px-1">
@@ -122,7 +102,7 @@ const Post: React.FC<postValues> = ({
                           onClick={() => {
                             setDelete(!deletes);
                             dispatch({
-                              title: id,
+                              title: projectName,
                               payload: `${postValues.title}`,
                               type: "DELETE_POST",
                             });

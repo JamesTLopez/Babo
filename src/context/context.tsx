@@ -41,18 +41,29 @@ export const projectsReducer = (state: any, action: any) => {
       };
     case "UPDATE_POST":
 
-
-      let changedPost = state.allProjects.map((x: any) => {
-        if (x.title === action.payload.title) {
-          let news = { ...x };
-          console.log(news);
-          return news;
-        } else {
+    
+      let changedPost = state.allProjects.filter((x: any) => x.title === action.title)[0].posts;
+      let feak = changedPost.map((x:any) => {
+        if(x.id === action.id){
+  
+          return action.payload 
+        }else{
+          return x
+        }
+      })
+      
+        state.allProjects.map((x:any) =>{
+        if(x.title === action.title){
+            x.posts = feak;
+          return x
+        }else{
+ 
           return x;
         }
-      });
-      // console.log(changedPost)
-      
+
+      })
+
+  
       return {
         ...state
       };

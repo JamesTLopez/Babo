@@ -22,7 +22,7 @@ const Posts: React.FC = () => {
                 className="flex items-center flex-col w-full"
                 key={post.title}
               >
-                <Post title={post.title} hours={post.hours} date={post.date} />
+                <Post id={post.id} title={post.title} hours={post.hours} date={post.date} />
               </div>
             ))}
           </div>

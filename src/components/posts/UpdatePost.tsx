@@ -1,43 +1,74 @@
 import React from "react";
 import { Formik, Form, Field } from "formik";
+import { Consumer } from "../../context/context";
+import { useParams } from "react-router-dom";
 
 interface postKeyValues {
-    Title: string;
-    Date:string;
-    Hours:number;
-    Description?:string;
+  id: number;
+  title: string;
+  date: string;
+  hours: number;
+  description?: string;
 }
 
-const UpdatePost: React.FC<postKeyValues> = ({Title,Date,Hours,Description}) => {
-  const initialValues: postKeyValues = { Title: Title,Date:Date,Hours:Hours,Description:Description };
+const UpdatePost: React.FC<postKeyValues> = ({
+  id,
+  title,
+  date,
+  hours,
+  description,
+}) => {
+  const initialValues: postKeyValues = {
+    id: id,
+    title: title,
+    date: date,
+    hours: hours,
+    description: description,
+  };
+
+  let a: any = useParams();
 
   return (
-    <div className="updatepost">
-      <Formik
-        initialValues={initialValues}
-        onSubmit={(values, actions) => {
-          console.log({ values, actions });
+    <Consumer>
+      {({ dispatch }) => {
+        return (
+          <div className="updatepost">
+            <Formik
+              initialValues={initialValues}
+              onSubmit={(values, actions) => {
+                dispatch({
+                  title: a.id,
+                  id:id,
+                  type: "UPDATE_POST",
+                  payload: values,
+                });
 
-          alert(JSON.stringify(values, null, 2));
+                actions.setSubmitting(false);
+              }}
+            >
+              <Form>
+                <label htmlFor="Title">Title</label>
+                <Field id="title" name="title" placeholder="title" />
+                <label htmlFor="Date">Date</label>
+                <Field id="date" name="date" placeholder="date..." />
+                <label htmlFor="Hours">Hours</label>
+                <Field id="hours" name="hours" placeholder="hours..." />
+                <label htmlFor="Description">Description</label>
+                <Field
+                  id="description"
+                  name="description"
+                  placeholder="Description..."
+                />
 
-          actions.setSubmitting(false);
-        }}
-      >
-        <Form>
-          <label htmlFor="Title">Title</label>
-          <Field id="Title" name="Title" placeholder="title" />
-          <label htmlFor="Date">Date</label>
-          <Field id="Date" name="Date" placeholder="date..." />
-          <label htmlFor="Hours">Hours</label>
-          <Field id="Hours" name="Hours" placeholder="hours..." />
-          <label htmlFor="Description">Description</label>
-          <Field id="Description" name="Description" placeholder="Description..." />
-
-
-          <button type="submit">Submit</button>
-        </Form>
-      </Formik>
-    </div>
+                <button className="text-white" type="submit">
+                  Submit
+                </button>
+              </Form>
+            </Formik>
+          </div>
+        );
+      }}
+    </Consumer>
   );
 };
 
