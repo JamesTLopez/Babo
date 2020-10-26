@@ -35,7 +35,7 @@ const UpdatePost: React.FC<postKeyValues> = ({
           <div className="updatepost">
             <Formik
               initialValues={initialValues}
-              onSubmit={(values, actions) => {
+              onSubmit={(values) => {
                 dispatch({
                   title: a.id,
                   id:id,
@@ -43,7 +43,7 @@ const UpdatePost: React.FC<postKeyValues> = ({
                   payload: values,
                 });
 
-                actions.setSubmitting(false);
+              
               }}
             >
               <Form>
@@ -59,7 +59,6 @@ const UpdatePost: React.FC<postKeyValues> = ({
                   name="description"
                   placeholder="Description..."
                 />
-
                 <button className="text-white" type="submit">
                   Submit
                 </button>

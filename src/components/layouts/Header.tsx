@@ -3,18 +3,13 @@ import { Link } from "react-router-dom";
 import Babo from "../../images/BaboHeader.svg";
 
 function Header() {
-  const [menu, isMenuSelected] = useState<boolean>(false);
+  const [menu, ] = useState<boolean>(false);
 
-  const selected = () => {
-    isMenuSelected(!menu);
-  };
+
 
   return (
     <header className="head w-full fixed h-24 shadow-xl bg-gray-900 sm:flex sm:justify-end">
-
-
       <div className="flex p-4 sm:flex-1">
-        
         <div className="flex-1">
           <Link to="/home">
             <img id="logo" className="h-16" src={Babo} alt="Babo" />

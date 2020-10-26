@@ -21,10 +21,10 @@ function CreateProject() {
               <section id="create-form">
                 <Formik
                   initialValues={{ title: "", posts: [] }}
-                  onSubmit={(values, actions) => {
+                  onSubmit={(values) => {
                     
                     dispatch({payload:values,type:"CREATE_PROJECT"})
-                    actions.setSubmitting(false);
+                   
                   }}
                 >
                   <Form>

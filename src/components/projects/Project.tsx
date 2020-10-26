@@ -11,6 +11,7 @@ const Project: React.FC<any> = ({ state }) => {
   let projectPosts = posts[0];
 
   return (
+    
     <div key={projectPosts.title} className="p-10 relative flex flex-col">
       <div className="sm:flex items-center hidden h-12">
         <div className="fixed p-4">

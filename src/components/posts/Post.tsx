@@ -1,4 +1,4 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import ProfilesPic from "../../images/pro.jpg";
 import Edit from "../../images/edit.png";
 import Delete from "../../images/delete.png";
@@ -8,7 +8,7 @@ import { Consumer } from "../../context/context";
 import UpdatePost from "./UpdatePost";
 
 interface postValues {
-  id:number;
+  id: number;
   title: string;
   hours: number;
   date: string;
@@ -16,7 +16,8 @@ interface postValues {
   dispatch?: () => void;
 }
 
-const Post: React.FC<postValues> = ({id,
+const Post: React.FC<postValues> = ({
+  id,
   title,
   hours,
   date,
@@ -25,17 +26,15 @@ const Post: React.FC<postValues> = ({id,
 }) => {
   let [activate, setActivate] = useState<boolean>(false);
   let [deletes, setDelete] = useState<boolean>(true);
-  let [postValues, ] = useState<postValues>({
-    id:id,
+  let [postValues] = useState<postValues>({
+    id: id,
     title: title,
     hours: hours,
     date: date,
     description: description,
   });
 
-
   let { projectName }: any = useParams();
-
 
   return (
     <Consumer>
@@ -62,9 +61,7 @@ const Post: React.FC<postValues> = ({id,
                           <h2 className="text-lg font-bold opacity-100">
                             {postValues.title}
                           </h2>
-                          <h2 className="text-sm opacity-75">
-                            {projectName}
-                          </h2>
+                          <h2 className="text-sm opacity-75">{projectName}</h2>
                           <h2 className="opacity-50">{postValues.date}</h2>
                           <h2 className="opacity-50">
                             {postValues.hours} / 10.3 h
@@ -74,12 +71,19 @@ const Post: React.FC<postValues> = ({id,
                       <div className="flex w-11/12 h-full items-center">
                         <textarea
                           className={` textareas w-full  outline-none resize-none rounded-lg text-white opacity-75 h-full bg-gray-900 p-2 `}
+                          value={postValues.description}
                           disabled={true}
                         />
                       </div>
                     </>
                   ) : (
-                    <UpdatePost id={postValues.id} title={postValues.title} date={postValues.date} hours={postValues.hours} description={postValues.description}/>
+                    <UpdatePost
+                      id={postValues.id}
+                      title={postValues.title}
+                      date={postValues.date}
+                      hours={postValues.hours}
+                      description={postValues.description}
+                    />
                   )}
 
                   <div className="w-11/12 flex py-2 px-1">

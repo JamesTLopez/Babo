@@ -24,12 +24,6 @@ function Tabs() {
                 <div className={menu ? "line line-2" : "line "}></div>
                 <div className={menu ? "line line-3" : "line"}></div>
               </div>
-              {/* <button
-                className="sm:hidden m-3 visible text-white bg-green-400 p-2"
-                onClick={onyx}
-              >
-                Open Menu
-              </button> */}
             </div>
             <div
               className={
@@ -54,7 +48,6 @@ function Tabs() {
                         {x.title}
                       </Link>
                     ))}
-
                     <Link to="/createproject">
                       <img className="h-3" src={Plus} alt="inbox" />{" "}
                       <span className="opacity-50 text-sm">

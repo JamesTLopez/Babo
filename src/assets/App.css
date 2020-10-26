@@ -224,6 +224,23 @@ body,
   border-top: solid 1px;
 }
 
+.createTasks .content #create-projects #project-link form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-left: 5px;
+}
+
+.createTasks .content #create-projects #project-link form input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 5px;
+  border-radius: 10px;
+  background-color: #262b33;
+}
+
 .createTasks .content #create-projects #project-link:hover {
   background-color: #343c47;
 }
