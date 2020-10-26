@@ -20,7 +20,7 @@ const Posts: React.FC = () => {
             {projectPosts.posts.map((post) => (
               <div
                 className="flex items-center flex-col w-full"
-                key={post.title}
+                key={post.title || post.hours || post.date || post.description}
               >
                 <Post id={post.id} title={post.title} hours={post.hours} date={post.date} />
               </div>

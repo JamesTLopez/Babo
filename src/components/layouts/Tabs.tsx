@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { Consumer } from "../../context/context";
 import Inbox from "../../images/inbox.svg";
 import Plus from "../../images/plus.svg";
-import Time from "../../images/timeline.svg";
 
 function Tabs() {
   const [menu, isMenuSelected] = useState<boolean>(false);
@@ -19,13 +18,18 @@ function Tabs() {
 
         return (
           <div className="tab sm:w-1/6 sm:fixed relative w-full sm:h-full bg-gray-800">
-            <div className="button-container flex items-center justify-center w-full ">
-              <button
+            <div className="button-container flex items-end justify-end w-full ">
+              <div onClick={onyx} className="sm:hidden ham">
+                <div className={menu ? "line line-1" : "line "}></div>
+                <div className={menu ? "line line-2" : "line "}></div>
+                <div className={menu ? "line line-3" : "line"}></div>
+              </div>
+              {/* <button
                 className="sm:hidden m-3 visible text-white bg-green-400 p-2"
                 onClick={onyx}
               >
                 Open Menu
-              </button>
+              </button> */}
             </div>
             <div
               className={
@@ -36,12 +40,9 @@ function Tabs() {
             >
               <div className="flex flex-col w-full">
                 <div className="project-nav flex flex-col">
-                  <div className="nav flex flex-col sm:items-start items-center">
-                    <Link to="/dashboard/inbox">
+                  <div className="sm:hidden nav flex flex-col sm:items-start items-center">
+                    <Link to="/dashboard">
                       <img className="h-5" src={Inbox} alt="inbox" /> Inbox
-                    </Link>
-                    <Link to="/dashboard/projects">
-                      <img className="h-5" src={Time} alt="inbox" /> Time Line
                     </Link>
                   </div>
                   <h1 className="text-white">Projects</h1>

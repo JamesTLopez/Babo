@@ -62,6 +62,7 @@ export const projectsReducer = (state: any, action: any) => {
         }
 
       })
+      console.log(action.payload)
 
   
       return {

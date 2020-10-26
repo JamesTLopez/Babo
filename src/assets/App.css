@@ -716,6 +716,11 @@ body,
   min-width: 223px;
 }
 
+.tab .button-container {
+  position: absolute;
+  top: -45px;
+}
+
 @media (min-width: 660px) {
   .tab {
     margin-top: 96px;

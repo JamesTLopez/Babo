@@ -525,6 +525,10 @@ body,
   margin-top: 0px;
   border-bottom: #00c2f381 2px solid;
   animation: fadeIn 0.5s;
+  .button-container{
+    position: absolute;
+    top:-45px;
+  }
   @media (min-width: 660px) {
     margin-top: 96px;
     border-right: #00c2f381 2px solid;
