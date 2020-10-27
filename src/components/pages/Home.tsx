@@ -37,14 +37,11 @@ function Home() {
                   <img src={BB} alt="Babo"></img>
                 </div>
               )}
-
-                <div onClick={selected} className="sm:hidden ham">
-                  <div className={menu ? "line line-1" : "line "}></div>
-                  <div className={menu ? "line line-2" : "line "}></div>
-                  <div className={menu ? "line line-3" : "line"}></div>
-                </div>
- 
-
+              <div onClick={selected} className="sm:hidden ham">
+                <div className={menu ? "line line-1" : "line "}></div>
+                <div className={menu ? "line line-2" : "line "}></div>
+                <div className={menu ? "line line-3" : "line"}></div>
+              </div>
               <div
                 id=""
                 className={
@@ -99,13 +96,13 @@ function Home() {
             </div>
             <div id="right-pane" className="pane">
               <h1> CREATE AND ADD NEW TASKS</h1>
-              <p> Create posts and tell us whats its about!</p>
+              <p> Create posts and keep track of your progress!</p>
             </div>
           </section>
           <section id="example" className="flex">
             <div id="left-pane" className="pane">
-              <h1> CUSTOMIZE YOUR EXPERIENCE</h1>
-              <p> Dont like the default look? Try out the other options!</p>
+              <h1> MADE A MISTAKE?</h1>
+              <p> Edit and change posts!</p>
             </div>
             <div id="right-pane" className="pane">
               <img src={Example} alt="example" width="648"></img>

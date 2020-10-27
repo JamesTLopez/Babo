@@ -31,35 +31,35 @@ export let myPosts:postValues[] =[
         title:"James",
         hours:2,
         date:"September 21 2020",
-        description:""
+        description:"Example"
     },
     {
         id:2,
         title:"Generics Review",
         hours:10,
         date:"April 10 2020",
-        description:""
+        description:"Refresh oop"
     },
     {
         id:3,
         title:"Creating Types",
         hours:1.3,
         date:"June 11 2020",
-        description:""
+        description:"refresher"
     },
     {
         id:4,
         title:"Implementing Interface",
         hours:4,
         date:"November 23 2020",
-        description:""
+        description:"refresher"
     },
     {
         id:5,
         title:"Start Project",
         hours:2.6,
         date:"December 1 2020",
-        description:""
+        description:"Babo"
     },
 
 ]

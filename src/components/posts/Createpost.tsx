@@ -54,12 +54,12 @@ function Createpost() {
                 </div>
               </div>
               {active ? (
-                <div className="fadeIn p-3 flex items-center justify-center w-full">
+                <div className="createAnimation p-3 flex items-center justify-center w-full">
                   <Formik
                     initialValues={postValues}
                     onSubmit={(values) => {
                     
-                      values.id = post[0].posts.length +1;
+                      values.id = post[0].posts.length + 1;
                       dispatch({title:id,payload:values,type:"CREATE_POST"})
                     }}
                   >

@@ -543,8 +543,10 @@ body,
     top:-45px;
   }
   @media (min-width: 660px) {
-    margin-top: 96px;
+
     border-right: #00c2f381 2px solid;
+    
+    
   }
   min-width: 223px;
 }
@@ -591,11 +593,14 @@ body,
   h1 {
     font-size: 1rem;
     padding: 6px 0px 6px 0px;
-    margin-top: 20px;
+    margin-top: 30px;
     text-align: center;
     color: #43658b;
   }
   @media (min-width: 660px) {
+
+
+    
     .sep {
       border: 1px solid rgba(255, 255, 255, 0.493);
       margin: 6px 0px 6px 0px;
@@ -604,6 +609,7 @@ body,
       font-size: 1rem;
       text-align: left;
     }
+    
   }
 }
 .theTop {
@@ -625,6 +631,36 @@ body,
 
 .createProject {
   min-width: 330px;
+}
+
+.card{
+  height: 300px;
+  width: 400px;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  label{
+    font-size: 30px;
+    color:white;
+  }
+}
+
+.createAnimation{
+  position: relative;
+  animation: slideout 0.4s;
+  @keyframes slideout {
+    from {
+      opacity: 0;
+      top: -20px;
+    }
+    to {
+      opacity: 1;
+      top: 0px;
+    }
+  }
+
 }
 
 @keyframes fadeIn {

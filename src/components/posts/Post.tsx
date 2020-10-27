@@ -8,7 +8,7 @@ import { Consumer } from "../../context/context";
 import UpdatePost from "./UpdatePost";
 
 interface postValues {
-  id: number;
+  ids: number;
   title: string;
   hours: number;
   date: string;
@@ -17,7 +17,7 @@ interface postValues {
 }
 
 const Post: React.FC<postValues> = ({
-  id,
+  ids,
   title,
   hours,
   date,
@@ -27,14 +27,15 @@ const Post: React.FC<postValues> = ({
   let [activate, setActivate] = useState<boolean>(false);
   let [deletes, setDelete] = useState<boolean>(true);
   let [postValues] = useState<postValues>({
-    id: id,
+    ids: ids,
     title: title,
     hours: hours,
     date: date,
     description: description,
   });
 
-  let { projectName }: any = useParams();
+  let { id }: any = useParams();
+
 
   return (
     <Consumer>
@@ -61,10 +62,10 @@ const Post: React.FC<postValues> = ({
                           <h2 className="text-lg font-bold opacity-100">
                             {postValues.title}
                           </h2>
-                          <h2 className="text-sm opacity-75">{projectName}</h2>
+                          <h2 className="text-sm opacity-75">{id}</h2>
                           <h2 className="opacity-50">{postValues.date}</h2>
                           <h2 className="opacity-50">
-                            {postValues.hours} / 10.3 h
+                            {postValues.hours} h
                           </h2>
                         </div>
                       </div>
@@ -78,7 +79,7 @@ const Post: React.FC<postValues> = ({
                     </>
                   ) : (
                     <UpdatePost
-                      id={postValues.id}
+                      id={postValues.ids}
                       title={postValues.title}
                       date={postValues.date}
                       hours={postValues.hours}
@@ -106,7 +107,7 @@ const Post: React.FC<postValues> = ({
                           onClick={() => {
                             setDelete(!deletes);
                             dispatch({
-                              title: projectName,
+                              title: id,
                               payload: `${postValues.title}`,
                               type: "DELETE_POST",
                             });

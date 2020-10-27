@@ -18,22 +18,19 @@ export const projectsReducer = (state: any, action: any) => {
         allProject: state.allProjects.push(action.payload),
       };
     case "UPDATE_PROJECT":
-  
-      state.allProjects.map((x:any) => {
-        if(x.title === action.title){
+      state.allProjects.map((x: any) => {
+        if (x.title === action.title) {
           x.title = action.payload;
           return x;
-        }else{
+        } else {
           return x;
         }
-      })
+      });
 
-      console.log(state)
       return {
         ...state,
       };
     case "CREATE_POST":
-      
       state.allProjects.map((x: any) => {
         if (x.title === action.title) {
           let news = { ...x };
@@ -44,37 +41,34 @@ export const projectsReducer = (state: any, action: any) => {
         }
       });
 
-
       return {
-        ...state
+        ...state,
       };
     case "UPDATE_POST":
-
-    
-      let changedPost = state.allProjects.filter((x: any) => x.title === action.title)[0].posts;
-      let feak = changedPost.map((x:any) => {
-        if(x.id === action.id){
-  
-          return action.payload 
-        }else{
-          return x
-        }
-      })
-      
-        state.allProjects.map((x:any) =>{
-        if(x.title === action.title){
-            x.posts = feak;
-          return x
-        }else{
- 
+      let changedPost = state.allProjects.filter(
+        (x: any) => x.title === action.title
+      )[0].posts;
+      let feak = changedPost.map((x: any) => {
+        if (x.id === action.id) {
+          return action.payload;
+        } else {
           return x;
         }
+      });
 
-      })
+      state.allProjects.map((x: any) => {
+        if (x.title === action.title) {
+          x.posts = feak;
+          return x;
+        } else {
+          return x;
+        }
+      });
       return {
-        ...state
+        ...state,
       };
     case "DELETE_POST":
+      console.log(action.title)
       let post = state.allProjects.map((x: any) => {
         if (x.title === action.title) {
           let news = { ...x };
@@ -84,6 +78,8 @@ export const projectsReducer = (state: any, action: any) => {
           return x;
         }
       });
+      
+      
       return {
         ...state,
         allProjects: post,
