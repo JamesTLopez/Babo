@@ -20,10 +20,19 @@ function CreateProject() {
               </section>
               <section id="create-form">
                 <Formik
-                  initialValues={{ title: "", posts: [] }}
+                  initialValues={{ title: "",color:"", posts: [] }}
                   onSubmit={(values) => {
+                    console.log(values);
+                    if(values.title === ""){
+                      alert("title must have a value");
+
+                    }else if(values.color === ""){
+                      alert("Color for project must be selected");
+                    }else{
+                      dispatch({ payload: values, type: "CREATE_PROJECT" });
+                    }
    
-                    dispatch({ payload: values, type: "CREATE_PROJECT" });
+                    
                   }}
                 >
                   <Form>
