@@ -9,6 +9,7 @@ import { Consumer } from "../../context/context";
 import UpdatePost from "./UpdatePost";
 
 interface postValues {
+  entirePost:any;
   ids: number;
   title: string;
   hours: number;
@@ -16,7 +17,7 @@ interface postValues {
   description?: string;
 }
 
-const Post: React.FC<postValues> = ({
+const Post: React.FC<postValues> = ({entirePost,
   ids,
   title,
   hours,
@@ -27,6 +28,7 @@ const Post: React.FC<postValues> = ({
   let [activate, setActivate] = useState<boolean>(false);
   let [deletes, setDelete] = useState<boolean>(true);
   let [postValues] = useState<postValues>({
+    entirePost:entirePost,
     ids: ids,
     title: title,
     hours: hours,
@@ -40,6 +42,7 @@ const Post: React.FC<postValues> = ({
   return (
     <Consumer>
       {({ dispatch }) => {
+
         return (
           <>
             {deletes ? (
@@ -95,6 +98,7 @@ const Post: React.FC<postValues> = ({
                           dispatch({
                             title: id,
                             payload: `${postValues.title}`,
+                            entirePost:entirePost,
                             type: "COMPLETE_POST",
                           });
                         }}
@@ -103,7 +107,7 @@ const Post: React.FC<postValues> = ({
                         <img
                           className="h-4"
                           src={Finished}
-                          alt="Edit Message"
+                          alt="Complete post"
                         ></img>
                       </button>
                     </div>
