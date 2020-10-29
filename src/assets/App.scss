@@ -108,6 +108,20 @@ body,
           border-radius: 20px;
           border: 3px solid #343c47;
         }
+        label{
+          color:white;
+          margin:10px 0 0 10px;
+        }
+        .radio-group{
+          display: flex;
+          input{
+            margin: 5px 0 5px 10px;
+            padding: 0px;
+            height: 20px;
+          }
+        
+
+        }
         .button-group {
           margin: 15px 0 10px 0;
           display: flex;
@@ -611,6 +625,12 @@ body,
     }
     
   }
+}
+.completed_posts{
+  display:flex;
+  height:100%;
+  padding: 2.5rem;
+  
 }
 .theTop {
   margin-top: 6rem;

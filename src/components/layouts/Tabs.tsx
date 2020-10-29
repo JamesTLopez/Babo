@@ -34,11 +34,6 @@ function Tabs() {
             >
               <div className="flex flex-col w-full">
                 <div className="project-nav flex flex-col">
-                  <div className="sm:hidden nav flex flex-col sm:items-start items-center">
-                    <Link to="/dashboard">
-                      <img className="h-5" src={Inbox} alt="inbox" /> Inbox
-                    </Link>
-                  </div>
                   <h1 className="text-white">Projects</h1>
                   <div className="sep"></div>
                   <div className="nav flex flex-col sm:items-start items-center">
@@ -55,6 +50,12 @@ function Tabs() {
                       </span>
                     </Link>
                   </div>
+                  <div className="sep"></div>
+                <div className="nav flex flex-col sm:items-start items-center">
+                  <Link to="/dashboard/completed">
+                    <img className="h-5" src={Inbox} alt="inbox" /> Inbox
+                  </Link>
+                </div>
                 </div>
               </div>
               <div className="flex flex-col p-3"></div>

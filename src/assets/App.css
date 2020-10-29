@@ -158,6 +158,23 @@ body,
   border: 3px solid #343c47;
 }
 
+.createTasks .content #create-form form label {
+  color: white;
+  margin: 10px 0 0 10px;
+}
+
+.createTasks .content #create-form form .radio-group {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.createTasks .content #create-form form .radio-group input {
+  margin: 5px 0 5px 10px;
+  padding: 0px;
+  height: 20px;
+}
+
 .createTasks .content #create-form form .button-group {
   margin: 15px 0 10px 0;
   display: -webkit-box;
@@ -815,6 +832,14 @@ body,
     font-size: 1rem;
     text-align: left;
   }
+}
+
+.completed_posts {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  padding: 2.5rem;
 }
 
 .theTop {

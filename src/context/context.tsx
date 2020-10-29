@@ -68,7 +68,7 @@ export const projectsReducer = (state: any, action: any) => {
         ...state,
       };
     case "DELETE_POST":
-      console.log(action.title)
+
       let post = state.allProjects.map((x: any) => {
         if (x.title === action.title) {
           let news = { ...x };
@@ -78,11 +78,31 @@ export const projectsReducer = (state: any, action: any) => {
           return x;
         }
       });
-      
-      
+
       return {
         ...state,
         allProjects: post,
+      };
+
+    case "COMPLETE_POST":
+      console.log(action.title);
+      let complete = state.allProjects.map((x: any) => {
+        if (x.title === action.title) {
+          let news = { ...x };
+          let temp = news.posts.find((x:any) => x.title === action.payload);
+          temp.isCompleted = true;
+          state.completed_posts.push(temp);
+          news.posts = x.posts.filter((x: any) => x.title !== action.payload);
+      
+          return news;
+        } else {
+          return x;
+        }
+      });
+
+      return {
+        ...state,
+        allProjects:complete
       };
     default:
       console.log("reder");

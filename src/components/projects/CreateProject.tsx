@@ -22,9 +22,7 @@ function CreateProject() {
                 <Formik
                   initialValues={{ title: "", posts: [] }}
                   onSubmit={(values) => {
-                    
                     dispatch({payload:values,type:"CREATE_PROJECT"})
-                   
                   }}
                 >
                   <Form>
@@ -34,6 +32,13 @@ function CreateProject() {
                       name="title"
                       placeholder="Project title..."
                     />
+                    <label>Project Color</label>
+                    <div className="radio-group">
+                      <Field id="red" type="radio" name="picked" value="One" />
+                      <Field type="radio" name="picked" value="One" />
+                      <Field type="radio" name="picked" value="One" />
+                      <Field type="radio" name="picked" value="One" />
+                    </div>
                     <div className="button-group">
                       <button>Add Project</button>
                     </div>

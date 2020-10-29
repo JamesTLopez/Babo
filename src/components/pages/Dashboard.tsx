@@ -3,6 +3,7 @@ import { Route, Switch } from "react-router-dom";
 import { Consumer } from "../../context/context";
 import Header from "../layouts/Header";
 import Tabs from "../layouts/Tabs";
+import CompletedPosts from "../posts/CompletedPosts";
 import CreateProject from "../projects/CreateProject";
 import Project from "../projects/Project";
 
@@ -27,6 +28,10 @@ function Dashboard() {
                   <Route
                     path="/dashboard/createproject"
                     component={CreateProject}
+                  />
+                    <Route
+                    path="/dashboard/completed"
+                    component={CompletedPosts}
                   />
                 </Switch>
               </div>

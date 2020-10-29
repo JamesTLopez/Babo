@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import ProfilesPic from "../../images/pro.jpg";
 import Edit from "../../images/edit.png";
 import Delete from "../../images/delete.png";
+import Finished from "../../images/finished.png"
 
 import { useParams } from "react-router-dom";
 import { Consumer } from "../../context/context";
@@ -13,7 +14,6 @@ interface postValues {
   hours: number;
   date: string;
   description?: string;
-  dispatch?: () => void;
 }
 
 const Post: React.FC<postValues> = ({
@@ -22,7 +22,7 @@ const Post: React.FC<postValues> = ({
   hours,
   date,
   description,
-  dispatch,
+
 }) => {
   let [activate, setActivate] = useState<boolean>(false);
   let [deletes, setDelete] = useState<boolean>(true);
@@ -88,6 +88,25 @@ const Post: React.FC<postValues> = ({
                   )}
 
                   <div className="w-11/12 flex py-2 px-1">
+                  <div className="flex-1 flex justify-start">
+                      <button
+                        onClick={() => {
+                          setDelete(!deletes);
+                          dispatch({
+                            title: id,
+                            payload: `${postValues.title}`,
+                            type: "COMPLETE_POST",
+                          });
+                        }}
+                        className="p-1 m-1 rounded-lg bg-green-500  text-xs text-white"
+                      >
+                        <img
+                          className="h-4"
+                          src={Finished}
+                          alt="Edit Message"
+                        ></img>
+                      </button>
+                    </div>
                     <div className="flex-1 flex justify-end">
                       <button
                         onClick={() => {
