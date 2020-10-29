@@ -39,7 +39,7 @@ function Tabs() {
                   <div className="nav flex flex-col sm:items-start items-center">
                     {projectState.allProjects.map((x) => (
                       <Link key={x.title} to={`/dashboard/projects/${x.title}`}>
-                        <img className="h-5" src={Inbox} alt="inbox" />{" "}
+                        <div className="dot-tab" style={{borderColor:`${x.color}`}}/>
                         {x.title}
                       </Link>
                     ))}
@@ -53,7 +53,7 @@ function Tabs() {
                   <div className="sep"></div>
                 <div className="nav flex flex-col sm:items-start items-center">
                   <Link to="/dashboard/completed">
-                    <img className="h-5" src={Inbox} alt="inbox" /> Inbox
+                    <img className="h-5" src={Inbox} alt="inbox" /> Completed Posts
                   </Link>
                 </div>
                 </div>

@@ -114,9 +114,13 @@ body,
         }
         .radio-group{
           display: flex;
+          label{
+            display: flex;
+            align-items: center;
+            margin: 0;
+          }
           input{
-            margin: 5px 0 5px 10px;
-            padding: 0px;
+            margin-left: 10px;
             height: 20px;
           }
         
@@ -434,6 +438,8 @@ body,
   }
 }
 
+
+
 //UPDATE POST
 
 .updatepost {
@@ -626,11 +632,35 @@ body,
     
   }
 }
+
+.dot{
+  border: 12px solid ;
+  border-radius: 15px;
+   
+}
+
+.dot-tab{
+  margin: 0 4px;
+  border: 9px solid ;
+  border-radius: 10px;
+   
+}
+
 .completed_posts{
   display:flex;
   flex-direction: column;
+  align-items: center;
   height:100%;
   padding: 2.5rem;
+
+  .postCard{
+    display:flex;
+    border-radius: 10px;
+    height: 100px;
+    min-width: 400px;
+    width: 500px;
+    margin: 10px 0 10px ;
+  }
   
 }
 .theTop {

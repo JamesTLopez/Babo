@@ -13,9 +13,9 @@ function CompletedPosts() {
         
         <div className="completed_posts">
             {projectState.completed_posts.map((x:any) => 
-                <div key={x.title}>
-                  
-                    {x.title}
+                <div key={x.title} className="postCard bg-gray-800">
+                  <h1>{x.title}</h1>
+                    
                 </div>
             ) }
         </div>);

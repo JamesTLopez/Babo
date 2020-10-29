@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import ProfilesPic from "../../images/pro.jpg";
 import Edit from "../../images/edit.png";
 import Delete from "../../images/delete.png";
 import Finished from "../../images/finished.png"
@@ -11,6 +10,7 @@ import UpdatePost from "./UpdatePost";
 interface postValues {
   entirePost:any;
   ids: number;
+  color:string;
   title: string;
   hours: number;
   date: string;
@@ -19,6 +19,7 @@ interface postValues {
 
 const Post: React.FC<postValues> = ({entirePost,
   ids,
+  color,
   title,
   hours,
   date,
@@ -29,6 +30,7 @@ const Post: React.FC<postValues> = ({entirePost,
   let [deletes, setDelete] = useState<boolean>(true);
   let [postValues] = useState<postValues>({
     entirePost:entirePost,
+    color:color,
     ids: ids,
     title: title,
     hours: hours,
@@ -50,11 +52,9 @@ const Post: React.FC<postValues> = ({entirePost,
                 className={`post fadeIn  sm:w-3/4 xl:w-4/6   bg-gray-800 my-5 rounded-lg flex justify-between flex-col sm:flex-row shadow-xl `}
               >
                 <div className="image flex flex-col items-center m-2 ">
-                  <img
-                    className="sm:h-10 h-16 rounded-full"
-                    src={ProfilesPic}
-                    alt="temp"
-                  ></img>
+                  <div className="dot" style={{borderColor:`${color}`}}>
+
+                  </div>
                   <div className="sm:visible sm:my-1 vertical-divider h-full rounded-lg"></div>
                 </div>
                 <div className="flex items-center justify-between flex-col w-full p-2 bg-gray-800 rounded-lg">

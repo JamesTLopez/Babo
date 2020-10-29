@@ -56,7 +56,7 @@ export const projectsReducer = (state: any, action: any) => {
         }
       });
 
-      state.allProjects.map((x: any) => {
+      let ses = state.allProjects.map((x: any) => {
         if (x.title === action.title) {
           x.posts = feak;
           return x;
@@ -66,6 +66,7 @@ export const projectsReducer = (state: any, action: any) => {
       });
       return {
         ...state,
+        allProjects:ses
       };
     case "DELETE_POST":
       let post = state.allProjects.map((x: any) => {

@@ -8,9 +8,8 @@ function CreateProject() {
   return (
     <Consumer>
       {(Projects) => {
+        let { projectState, dispatch } = Projects;
 
-        let {projectState ,dispatch} = Projects;
-   
         let projectList = projectState.allProjects;
         return (
           <div className="fadeIn createTasks">
@@ -22,7 +21,8 @@ function CreateProject() {
                 <Formik
                   initialValues={{ title: "", posts: [] }}
                   onSubmit={(values) => {
-                    dispatch({payload:values,type:"CREATE_PROJECT"})
+                    console.log(values);
+                    dispatch({ payload: values, type: "CREATE_PROJECT" });
                   }}
                 >
                   <Form>
@@ -34,10 +34,22 @@ function CreateProject() {
                     />
                     <label>Project Color</label>
                     <div className="radio-group">
-                      <Field id="red" type="radio" name="picked" value="One" />
-                      <Field type="radio" name="picked" value="One" />
-                      <Field type="radio" name="picked" value="One" />
-                      <Field type="radio" name="picked" value="One" />
+                      <label>
+                        <Field type="radio" name="color" value="red" />
+                        <span style={{color:'red'}}>Red</span>
+                      </label>
+                      <label>
+                        <Field type="radio" name="color" value="green" />
+                        <span style={{color:'green'}}>Green</span>
+                      </label>
+                      <label>
+                        <Field type="radio" name="color" value="blue" />
+                        <span style={{color:'blue'}}>Blue</span>
+                      </label>
+                      <label>
+                        <Field type="radio" name="color" value="yellow" />
+                        <span style={{color:'yellow'}}>Yellow</span>
+                      </label>
                     </div>
                     <div className="button-group">
                       <button>Add Project</button>
