@@ -206,6 +206,14 @@ export let jamesUser:User ={
     name:"james",
     email:'test',
     allProjects:jamesProject,
-    completed_posts:[]
+    completed_posts:[  {
+        id:1,
+        color:'blue',
+        title:"Chords",
+        hours:1,
+        date:"May 31 2021",
+        description:"Hello",
+        isCompleted:false
+    }]
 }
 

@@ -108,23 +108,21 @@ body,
           border-radius: 20px;
           border: 3px solid #343c47;
         }
-        label{
-          color:white;
-          margin:10px 0 0 10px;
+        label {
+          color: white;
+          margin: 10px 0 0 10px;
         }
-        .radio-group{
+        .radio-group {
           display: flex;
-          label{
+          label {
             display: flex;
             align-items: center;
             margin: 0;
           }
-          input{
+          input {
             margin-left: 10px;
             height: 20px;
           }
-        
-
         }
         .button-group {
           margin: 15px 0 10px 0;
@@ -168,15 +166,15 @@ body,
         padding: 5px 0 5px 0;
         border-top: solid 1px;
 
-        form{
+        form {
           display: flex;
           width: 100%;
           margin-left: 5px;
-          input{
-            display:flex;
+          input {
+            display: flex;
             padding: 5px;
             border-radius: 10px;
-          
+
             background-color: #262b33;
           }
         }
@@ -438,8 +436,6 @@ body,
   }
 }
 
-
-
 //UPDATE POST
 
 .updatepost {
@@ -451,18 +447,18 @@ body,
     label {
       border-width: 0;
       border-style: solid;
-      color:#e2e8f0;
+      color: #e2e8f0;
     }
-    input{
+    input {
       margin: 5px 0 5px 0;
       padding: 13px;
       height: 25px;
       border-radius: 20px;
       border: 3px solid #343c47;
-      color:#e2e8f0;
-      background-color: rgba(74, 85, 104, var(--bg-opacity))
+      color: #e2e8f0;
+      background-color: rgba(74, 85, 104, var(--bg-opacity));
     }
-    button{
+    button {
       background-color: rgba(36, 189, 22, 0.74);
     }
   }
@@ -558,15 +554,12 @@ body,
   margin-top: 0px;
   border-bottom: #00c2f381 2px solid;
   animation: fadeIn 0.5s;
-  .button-container{
+  .button-container {
     position: absolute;
-    top:-45px;
+    top: -45px;
   }
   @media (min-width: 660px) {
-
     border-right: #00c2f381 2px solid;
-    
-    
   }
   min-width: 223px;
 }
@@ -618,9 +611,6 @@ body,
     color: #43658b;
   }
   @media (min-width: 660px) {
-
-
-    
     .sep {
       border: 1px solid rgba(255, 255, 255, 0.493);
       margin: 6px 0px 6px 0px;
@@ -629,39 +619,51 @@ body,
       font-size: 1rem;
       text-align: left;
     }
-    
   }
 }
 
-.dot{
-  border: 12px solid ;
+.dot {
+  border: 10px solid;
   border-radius: 15px;
-   
 }
 
-.dot-tab{
+.dot-tab {
   margin: 0 4px;
-  border: 9px solid ;
+  border: 9px solid;
   border-radius: 10px;
-   
 }
 
-.completed_posts{
-  display:flex;
+.completed_posts {
+  display: flex;
   flex-direction: column;
+  position: relative;
   align-items: center;
-  height:100%;
+  height: 100%;
   padding: 2.5rem;
 
-  .postCard{
-    display:flex;
+  .postCard {
+    display: flex;
     border-radius: 10px;
+    padding: 10px;
     height: 100px;
-    min-width: 400px;
-    width: 500px;
-    margin: 10px 0 10px ;
+    width: 50%;
+    margin: 10px 0 10px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.479);
+
+    .vertical-divider {
+      margin: 0 0 0 5px;
+      border: 1px solid rgba(255, 255, 255, 0.493);
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      color: white;
+      padding: 5px;
+    }
+    @media (min-width: 900px) {
+      width: 500px;
+    }
   }
-  
 }
 .theTop {
   margin-top: 6rem;
@@ -684,7 +686,7 @@ body,
   min-width: 330px;
 }
 
-.card{
+.card {
   height: 300px;
   width: 400px;
   border-radius: 10px;
@@ -692,13 +694,13 @@ body,
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  label{
+  label {
     font-size: 30px;
-    color:white;
+    color: white;
   }
 }
 
-.createAnimation{
+.createAnimation {
   position: relative;
   animation: slideout 0.4s;
   @keyframes slideout {
@@ -711,7 +713,6 @@ body,
       top: 0px;
     }
   }
-
 }
 
 @keyframes fadeIn {

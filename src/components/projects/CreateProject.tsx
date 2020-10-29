@@ -15,13 +15,14 @@ function CreateProject() {
           <div className="fadeIn createTasks">
             <div className="content">
               <section id="create-title">
+                
                 <h1>Project Manager</h1>
               </section>
               <section id="create-form">
                 <Formik
                   initialValues={{ title: "", posts: [] }}
                   onSubmit={(values) => {
-                    console.log(values);
+   
                     dispatch({ payload: values, type: "CREATE_PROJECT" });
                   }}
                 >

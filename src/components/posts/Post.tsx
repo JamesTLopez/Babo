@@ -55,7 +55,7 @@ const Post: React.FC<postValues> = ({entirePost,
                   <div className="dot" style={{borderColor:`${color}`}}>
 
                   </div>
-                  <div className="sm:visible sm:my-1 vertical-divider h-full rounded-lg"></div>
+                  <div className="sm:visible sm:m-1 vertical-divider h-full rounded-lg"></div>
                 </div>
                 <div className="flex items-center justify-between flex-col w-full p-2 bg-gray-800 rounded-lg">
                   {!activate ? (

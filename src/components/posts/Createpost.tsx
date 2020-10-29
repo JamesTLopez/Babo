@@ -1,4 +1,5 @@
 import { Field, Form, Formik } from "formik";
+import { title } from "process";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Consumer } from "../../context/context";
@@ -64,7 +65,14 @@ function Createpost() {
                       values['color'] = `${color?.color}`;
              
                       values.id = post[0].posts.length + 1;
-                      dispatch({title:id,payload:values,type:"CREATE_POST"})
+                      if(values.title === ''){
+                        alert("Must fill in all forms");
+                      }else if(values.date === ''){
+                        alert("Must fill in all forms");
+                      }else {
+                        dispatch({title:id,payload:values,type:"CREATE_POST"})
+                      }
+                      
                     }}
                   >
                     <Form className="flex flex-col w-3/4 text-white">

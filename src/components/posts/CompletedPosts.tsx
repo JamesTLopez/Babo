@@ -7,20 +7,24 @@ function CompletedPosts() {
       {(Projects) => {
         let { projectState } = Projects;
         console.log(projectState);
-        if(!(projectState.completed_posts.length === 0)){
-            
-        return (
-        
-        <div className="completed_posts">
-            {projectState.completed_posts.map((x:any) => 
+        if (!(projectState.completed_posts.length === 0)) {
+          return (
+            <div className="completed_posts">
+              {projectState.completed_posts.map((x: any) => (
                 <div key={x.title} className="postCard bg-gray-800">
-                  <h1>{x.title}</h1>
-                    
+       
+                  <div className="container">
+                    <h1>Title: {x.title}</h1>
+                    <h1>Date: {x.date}</h1>
+                    <h1>Description: {x.description}</h1>
+
+                  </div>
                 </div>
-            ) }
-        </div>);
-        }else{
-            return(<div> No Completed Posts</div>)
+              ))}
+            </div>
+          );
+        } else {
+          return <div> No Completed Posts</div>;
         }
       }}
     </Consumer>
