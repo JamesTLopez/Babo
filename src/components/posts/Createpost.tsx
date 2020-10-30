@@ -1,9 +1,9 @@
 import { Field, Form, Formik } from "formik";
-import { title } from "process";
 import React, { useState } from "react";
 import { useParams } from "react-router-dom";
 import { Consumer } from "../../context/context";
 import Plus from "../../images/plus.svg";
+
 
 interface postValues {
   id:number;
@@ -27,6 +27,7 @@ function Createpost() {
     date: "",
     description: "",
   });
+  
   const activate = () => {
     isActive(!active);
   };
@@ -90,6 +91,7 @@ function Createpost() {
                         name="date"
                         placeholder=""
                       />
+
                       <label htmlFor="hours">Hours Worked</label>
                       <Field
                         className="bg-gray-700"

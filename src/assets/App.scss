@@ -111,13 +111,18 @@ body,
         label {
           color: white;
           margin: 10px 0 0 10px;
+          text-align: center;
         }
         .radio-group {
           display: flex;
+          justify-content: center;
           label {
             display: flex;
             align-items: center;
             margin: 0;
+            span{
+              margin: 0 2px 0 5px;
+            }
           }
           input {
             margin-left: 10px;
@@ -443,13 +448,17 @@ body,
   form {
     margin-top: 10px;
     display: flex;
+
+    align-items: center;
     flex-direction: column;
     label {
+      align-self: flex-start;
       border-width: 0;
       border-style: solid;
       color: #e2e8f0;
     }
     input {
+      width: 100%;
       margin: 5px 0 5px 0;
       padding: 13px;
       height: 25px;
@@ -459,6 +468,10 @@ body,
       background-color: rgba(74, 85, 104, var(--bg-opacity));
     }
     button {
+      width: 50%;
+      margin:5px 0 5px 0;
+      border-radius: 15px;
+      padding: 3px 0 3px;
       background-color: rgba(36, 189, 22, 0.74);
     }
   }

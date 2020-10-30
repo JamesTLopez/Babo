@@ -11,9 +11,9 @@ function CompletedPosts() {
           return (
             <div className="completed_posts">
               {projectState.completed_posts.map((x: any) => (
-                <div key={x.title} className="postCard bg-gray-800">
+                <div key={x.title} className="postCard " style={{backgroundColor:`${x.color}`}}>
        
-                  <div className="container">
+                  <div className="container" >
                     <h1>Title: {x.title}</h1>
                     <h1>Date: {x.date}</h1>
                     <h1>Description: {x.description}</h1>

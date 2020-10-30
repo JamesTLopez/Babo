@@ -32,7 +32,7 @@ export interface User {
 export let myPosts:postValues[] =[
     {
         id:1,
-        color:'red',
+        color:'#ef476f',
         title:"James",
         hours:2,
         date:"September 21 2020",
@@ -41,7 +41,7 @@ export let myPosts:postValues[] =[
     },
     {
         id:2,
-        color:'red',
+        color:'#ef476f',
         title:"Generics Review",
         hours:10,
         date:"April 10 2020",
@@ -50,7 +50,7 @@ export let myPosts:postValues[] =[
     },
     {
         id:3,
-        color:'red',
+        color:'#ef476f',
         title:"Creating Types",
         hours:1.3,
         date:"June 11 2020",
@@ -59,7 +59,7 @@ export let myPosts:postValues[] =[
     },
     {
         id:4,
-        color:'red',
+        color:'#ef476f',
         title:"Implementing Interface",
         hours:4,
         date:"November 23 2020",
@@ -68,7 +68,7 @@ export let myPosts:postValues[] =[
     },
     {
         id:5,
-        color:'red',
+        color:'#ef476f',
         title:"Start Project",
         hours:2.6,
         date:"December 1 2020",
@@ -82,7 +82,7 @@ export let myPosts:postValues[] =[
 export let nonTypescript:postValues[] =[
     {
         id:1,
-        color:'green',
+        color:'#06d6a0',
         title:"javascript",
         hours:2,
         date:"May 31 2021",
@@ -91,7 +91,7 @@ export let nonTypescript:postValues[] =[
     },
     {
         id:2,
-        color:'green',
+        color:'#06d6a0',
         title:"C++",
         hours:10,
         date:"Jun 23 2021",
@@ -100,7 +100,7 @@ export let nonTypescript:postValues[] =[
     },
     {
         id:3,
-        color:'green',
+        color:'#06d6a0',
         title:"C#",
         hours:1.3,
         date:"July 11 2021",
@@ -109,7 +109,7 @@ export let nonTypescript:postValues[] =[
     },
     {
         id:4,
-        color:'green',
+        color:'#06d6a0',
         title:"Unity",
         hours:4,
         date:"November 23 2021",
@@ -118,7 +118,7 @@ export let nonTypescript:postValues[] =[
     },
     {
         id:5,
-        color:'green',
+        color:'#06d6a0',
         title:"Ableton",
         hours:2.6,
         date:"December 14 2021",
@@ -131,7 +131,7 @@ export let nonTypescript:postValues[] =[
 export let music:postValues[] =[
     {
         id:1,
-        color:'blue',
+        color:'#118ab2',
         title:"Chords",
         hours:1,
         date:"May 31 2021",
@@ -140,7 +140,7 @@ export let music:postValues[] =[
     },
     {
         id:2,
-        color:'blue',
+        color:'#118ab2',
         title:"Guitar Scales",
         hours:10,
         date:"Jun 23 2021",
@@ -149,7 +149,7 @@ export let music:postValues[] =[
     },
     {
         id:3,
-        color:'blue',
+        color:'#118ab2',
         title:"Piano",
         hours:1.3,
         date:"July 11 2021",
@@ -158,7 +158,7 @@ export let music:postValues[] =[
     },
     {
         id:4,
-        color:'blue',
+        color:'#118ab2',
         title:"Ableton Production",
         hours:4,
         date:"November 23 2021",
@@ -167,7 +167,7 @@ export let music:postValues[] =[
     },
     {
         id:5,
-        color:'blue',
+        color:'#118ab2',
         title:"Song writing",
         hours:2.6,
         date:"December 14 2021",
@@ -183,19 +183,19 @@ export let music:postValues[] =[
 export let jamesProject:project[] = [
     {
         id:1,
-        color:'red',
+        color:'#ef476f',
         title:"Typescript",
         posts:myPosts
     },
     {
         id:2,
-        color:'green',
+        color:'#06d6a0',
         title:"NotTypescript",
         posts:nonTypescript
     },
     {
         id:3,
-        color:'blue',
+        color:'#118ab2',
         title:"Music",
         posts:music
     }
@@ -208,12 +208,12 @@ export let jamesUser:User ={
     allProjects:jamesProject,
     completed_posts:[  {
         id:1,
-        color:'blue',
-        title:"Chords",
+        color:'#ffd166',
+        title:"true",
         hours:1,
         date:"May 31 2021",
-        description:"Hello",
-        isCompleted:false
+        description:"Whud up",
+        isCompleted:true
     }]
 }
 

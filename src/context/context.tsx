@@ -13,9 +13,15 @@ export const projectsReducer = (state: any, action: any) => {
         allProjects: projects,
       };
     case "CREATE_PROJECT":
+
+    if(state.allProjects.find((x:any) => x.title === action.payload.title)){
+      alert("Project already exist, please create a new Title");
+      return {...state};
+    }
+
       return {
         ...state,
-        allProject: state.allProjects.push(action.payload),
+        allProjects: [...state.allProjects, action.payload],
       };
     case "UPDATE_PROJECT":
       state.allProjects.map((x: any) => {
@@ -34,7 +40,13 @@ export const projectsReducer = (state: any, action: any) => {
       state.allProjects.map((x: any) => {
         if (x.title === action.title) {
           let news = { ...x };
-          news.posts = x.posts.push(action.payload);
+
+          if(news.posts.find((x:any) => x.title === action.payload.title)){
+            alert("Post already exists")
+            return {...state};
+          }else{
+            news.posts = x.posts.push(action.payload);
+          }
           return news;
         } else {
           return x;
@@ -42,7 +54,7 @@ export const projectsReducer = (state: any, action: any) => {
       });
 
       return {
-        ...state,
+        ...state
       };
     case "UPDATE_POST":
       let changedPost = state.allProjects.filter(
