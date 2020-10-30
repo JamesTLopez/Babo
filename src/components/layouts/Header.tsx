@@ -1,11 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import Babo from "../../images/BaboHeader.svg";
 
 function Header() {
   const [menu, ] = useState<boolean>(false);
-
-
 
   return (
     <header className="head w-full fixed h-24 shadow-xl bg-gray-900 sm:flex sm:justify-end">
@@ -21,7 +19,7 @@ function Header() {
           className={
             menu
               ? "block headerNav px-4 py-4"
-              : "hidden headerNav px-4 py-4 sm:flex  "
+              : "hidden headerNav px-4 py-4 lg:flex  "
           }
         >
           <Link

@@ -788,6 +788,10 @@ body,
   }
 }
 
+.mes {
+  min-width: 1000px;
+}
+
 .feed {
   scrollbar-width: none;
   -ms-overflow-style: none;

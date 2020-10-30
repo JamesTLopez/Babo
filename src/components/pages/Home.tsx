@@ -61,7 +61,7 @@ function Home() {
                     <a href="#contact">CONTACT</a>
                   </li>
                   <li>
-                    <Link to="/dashboard">TRY IT OUT!</Link>
+                    <Link to="/createproject">TRY IT OUT!</Link>
                   </li>
                 </ul>
               </div>

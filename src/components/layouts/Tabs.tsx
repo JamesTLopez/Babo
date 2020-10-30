@@ -17,9 +17,9 @@ function Tabs() {
         let { projectState } = Projects;
 
         return (
-          <div className="tab sm:w-1/6 sm:fixed relative w-full sm:h-full bg-gray-800">
+          <div className="tab lg:w-1/6 lg:fixed relative w-full lg:h-full bg-gray-800">
             <div className="button-container flex items-end justify-end w-full ">
-              <div onClick={onyx} className="sm:hidden ham">
+              <div onClick={onyx} className="lg:hidden ham">
                 <div className={menu ? "line line-1" : "line "}></div>
                 <div className={menu ? "line line-2" : "line "}></div>
                 <div className={menu ? "line line-3" : "line"}></div>
@@ -28,8 +28,8 @@ function Tabs() {
             <div
               className={
                 !menu
-                  ? "sm:flex flex-col sm:visible hidden sm:items-start items-center p-4"
-                  : "sm:flex flex-col sm:items-start items-center p-4"
+                  ? "lg:flex flex-col lg:visible hidden lg:items-start items-center p-4"
+                  : "lg:flex flex-col lg:items-start items-center p-4"
               }
             >
               <div className="flex flex-col w-full">

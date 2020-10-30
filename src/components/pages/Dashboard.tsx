@@ -16,7 +16,7 @@ function Dashboard() {
         return (
           <div className="back flex justify-center h-full  bg-gray-700">
             <Header />
-            <div className="theTop w-full flex sm:flex-row flex-col items-center">
+            <div className="theTop w-full flex lg:flex-row flex-col items-center">
               <Tabs />
               <div className="divs w-1/6"></div>
 
