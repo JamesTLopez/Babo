@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
 import BB from "../../images/BB.png";
-import Example from "../../images/Example.png";
+import UpdatePost from "../../images/UpdatePost.png";
 import CreateProject from "../../images/createproject.png";
+import MainDashboard from "../../images/mainDashboard.png"
 import { Link } from "react-router-dom";
 
 function Home() {
@@ -92,7 +93,7 @@ function Home() {
           </p>
           <section id="example" className="flex">
             <div id="left-pane" className="">
-              <img src={Example} alt="example" width="648"></img>
+              <img src={MainDashboard} alt="example" width="648"></img>
             </div>
             <div id="right-pane" className="pane">
               <h1> CREATE AND ADD NEW TASKS</h1>
@@ -105,7 +106,7 @@ function Home() {
               <p> Edit and change posts!</p>
             </div>
             <div id="right-pane" className="pane">
-              <img src={Example} alt="example" width="648"></img>
+              <img src={UpdatePost} alt="example" width="648"></img>
             </div>
           </section>
           <section id="example" className="flex">

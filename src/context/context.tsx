@@ -18,7 +18,7 @@ export const projectsReducer = (state: any, action: any) => {
       alert("Project already exist, please create a new Title");
       return {...state};
     }
-
+    
       return {
         ...state,
         allProjects: [...state.allProjects, action.payload],
@@ -34,7 +34,7 @@ export const projectsReducer = (state: any, action: any) => {
       });
 
       return {
-        ...state,
+        ...state
       };
     case "CREATE_POST":
       state.allProjects.map((x: any) => {
@@ -46,12 +46,14 @@ export const projectsReducer = (state: any, action: any) => {
             return {...state};
           }else{
             news.posts = x.posts.push(action.payload);
+            
           }
           return news;
         } else {
           return x;
         }
       });
+      console.log(state)
 
       return {
         ...state

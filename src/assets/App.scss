@@ -83,11 +83,17 @@ body,
     border-radius: 5px;
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
     #create-title {
+      display: flex;
+      flex-direction: column;
+      img{
+        margin: 1em 0;
+        height: 80px;
+      }
       h1 {
-        margin: 2em 0 2em 0;
+        margin: 1em 0 1.5em 0;
         color: rgb(255, 255, 255);
         text-align: center;
-        font-size: 2em;
+        font-size: 1.5em;
       }
     }
     #create-form {
@@ -663,11 +669,13 @@ body,
     border-radius: 10px;
     padding: 10px;
     height: 100px;
-    width: 50%;
+    width: 70%;
     margin: 10px 0 10px;
     box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.479);
 
+
     .vertical-divider {
+      height: 100%;
       margin: 0 0 0 5px;
       border: 1px solid rgba(255, 255, 255, 0.493);
     }

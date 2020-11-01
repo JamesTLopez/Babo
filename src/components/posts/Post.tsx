@@ -51,11 +51,11 @@ const Post: React.FC<postValues> = ({entirePost,
               <div
                 className={`post fadeIn  sm:w-3/4 xl:w-4/6   bg-gray-800 my-5 rounded-lg flex justify-between flex-col sm:flex-row shadow-xl `}
               >
-                <div className="image flex flex-col items-center m-2 ">
+                <div className="image flex flex-col sm:items-center items-start  p-2 m-2 ">
                   <div className="dot" style={{borderColor:`${color}`}}>
 
                   </div>
-                  <div className="sm:visible sm:m-1 vertical-divider h-full rounded-lg"></div>
+                  <div className="sm:visible hidden sm:m-1 vertical-divider h-full rounded-lg"></div>
                 </div>
                 <div className="flex items-center justify-between flex-col w-full p-2 bg-gray-800 rounded-lg">
                   {!activate ? (
@@ -83,6 +83,7 @@ const Post: React.FC<postValues> = ({entirePost,
                   ) : (
                     <UpdatePost
                       id={postValues.ids}
+                      color={postValues.color}
                       title={postValues.title}
                       date={postValues.date}
                       hours={postValues.hours}

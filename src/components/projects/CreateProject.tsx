@@ -1,10 +1,12 @@
 import React from "react";
 import { Field, Form, Formik } from "formik";
-
+import Babo from "../../images/BaboHeader.svg";
 import { Consumer } from "../../context/context";
+import { useHistory } from "react-router-dom";
 import ProjectLinks from "./projectComponents/ProjectLinks";
 
 function CreateProject() {
+  let history = useHistory();
   return (
     <Consumer>
       {(Projects) => {
@@ -15,23 +17,24 @@ function CreateProject() {
           <div className="fadeIn createTasks">
             <div className="content">
               <section id="create-title">
-                
+                <img src={Babo} alt="Babo Header"/>
                 <h1>Project Manager</h1>
               </section>
               <section id="create-form">
                 <Formik
                   initialValues={{ title: "",color:"", posts: [] }}
                   onSubmit={(values) => {
-                    console.log(values);
-                    if(values.title === ""){
-                      alert("title must have a value");
-
+                    if(values.title.includes(" ")){
+                      alert("Title can not contain whitespace")
+                    }else if(values.title === ""){
+                      alert("Title must have a value");
                     }else if(values.color === ""){
                       alert("Color for project must be selected");
                     }else{
                       dispatch({ payload: values, type: "CREATE_PROJECT" });
+                      history.push(`/dashboard/projects/${values.title}`);
                     }
-   
+                  
                     
                   }}
                 >

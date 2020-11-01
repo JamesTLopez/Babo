@@ -39,7 +39,7 @@ function Createpost() {
         let post = projects.filter((x:any) => id === x.title);
 
         return (
-          <div className="lg:fixed sm:w-3/4 md:w-1/4">
+          <div className="lg:fixed sm:w-3/4 md:w-2/4 lg:w-1/4">
             <div className="post bg-gray-800 my-5 rounded-lg flex justify-between flex-col  shadow-xl ">
               <div className="p-3 flex items-center w-full">
                 <div className="flex flex-1 justify-start">

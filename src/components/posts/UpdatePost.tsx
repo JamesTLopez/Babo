@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 
 interface postKeyValues {
   id: number;
+  color:string;
   title: string;
   date: string;
   hours: number;
@@ -13,6 +14,7 @@ interface postKeyValues {
 
 const UpdatePost: React.FC<postKeyValues> = ({
   id,
+  color,
   title,
   date,
   hours,
@@ -20,6 +22,7 @@ const UpdatePost: React.FC<postKeyValues> = ({
 }) => {
   const initialValues: postKeyValues = {
     id: id,
+    color:color,
     title: title,
     date: date,
     hours: hours,
@@ -38,12 +41,11 @@ const UpdatePost: React.FC<postKeyValues> = ({
               onSubmit={(values) => {
                 dispatch({
                   title: a.id,
+                  color:color,
                   id:id,
                   type: "UPDATE_POST",
                   payload: values,
                 });
-
-              
               }}
             >
               <Form>

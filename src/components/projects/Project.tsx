@@ -20,7 +20,7 @@ const Project: React.FC<any> = ({ state }) => {
           <div className="lg:w-2/3  w-full flex flex-col items-center ">
             <Posts />
           </div>
-          <div className=" lg:w-1/3 flex  justify-center ">
+          <div className=" lg:w-1/3 flex justify-center ">
             <Createpost />
           </div>
         </div>

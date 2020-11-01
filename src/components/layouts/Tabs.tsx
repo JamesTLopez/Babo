@@ -46,7 +46,7 @@ function Tabs() {
                     <Link to="/createproject">
                       <img className="h-3" src={Plus} alt="inbox" />{" "}
                       <span className="opacity-50 text-sm">
-                        Create Projects
+                        Project Manager
                       </span>
                     </Link>
                   </div>
